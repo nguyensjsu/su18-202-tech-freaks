@@ -1,6 +1,5 @@
 # su18-202-tech-freaks
 
-
 # Starbucks
 
 ## Table of content
@@ -50,6 +49,7 @@
 ### Add Cards API
 
 **By Harini Balakrishnan**
+
 - Create necessary classes in the library and followed test-driven development
 - Implement REST API to perform GET, POST and DELETE actions necessary for the project.
 - Wire-frame the UI for the AddCard, MyCards, Store and Settings screens.
@@ -65,6 +65,8 @@
 
 ## Architecture Diagram
 
+
+----
 ## Tools
 
 - Eclipse
