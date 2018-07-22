@@ -1,51 +1,89 @@
-##Project Journal
-Name  | Detail
-------------- | -------------
-Ravali Nagabandi  | Daily Scrum
+# Project Journal
 
-###Daily Scrum Report
+|Name | Detail|
+|---|---|
+| Ravali Nagabandi | Daily Scrum |
 
-####Jul 17th
+## Daily Scrum Report
+
+**Jul 17th**
+
 - What tasks did I work on / complete?
-Zoom call with the team and discussed about the project. Assignment of APIs to every team member is done and divided the tasks.
+
+> Zoom call with the team and discussed about the project. Assignment of APIs to every team member is done and divided the tasks.
+
 - What am I planning to work on next?
-Setup the project structure to implement "Managed Order API", MySQL database setup and establish connectivity from Java class, implement a method to insert menu items into the Item table and method to display list of all items and price
+
+> Setup the project structure to implement "Managed Order API", MySQL database setup and establish connectivity from Java class, implement a method to insert menu items into the Item table and method to display list of all items and price
+
 - What tasks are blocked waiting on another team member?
- No blockers for now
+
+ > No blockers for now
 -------------
-####Jul 18th
+**Jul 18th**
+
 - What tasks did I work on / complete?
-Implemented a method to insert menu items into the Item table and method to display list of all items and price
+
+> Implemented a method to insert menu items into the Item table and method to display list of all items and price
+
 - What am I planning to work on next?
-Implement methods to insert and delete menu items to and from Item table.
+
+> Implement methods to insert and delete menu items to and from Item table.
+
 - What tasks are blocked waiting on another team member?
-Issue with database connectivity from Eclipse
+
+> Issue with database connectivity from Eclipse
+
 -------------
-####Jul 19th
+
+**Jul 19th**
+
 - What tasks did I work on / complete?
-Implemented methods to insert and delete menu items to and from Item table.
+
+> Implemented methods to insert and delete menu items to and from Item table.
+
 - What am I planning to work on next?
-Implement update method to update the price of an item in the Item table
+
+> Implement update method to update the price of an item in the Item table
+
 - What tasks are blocked waiting on another team member?
-No blockers
+
+> No blockers
+
 -------------
-####Jul 20th
+
+**Jul 20th**
+
 - What tasks did I work on / complete?
-Implemented update method to update the price of an item in the Item table
+
+> Implemented update method to update the price of an item in the Item table
+
 - What am I planning to work on next?
-Create ORDER Table and Implement placeOrder method to take the order of items and return the total price of the order
+
+> Create ORDER Table and Implement placeOrder method to take the order of items and return the total price of the order
+
 - What tasks are blocked waiting on another team member?
-No blockers
+
+> No blockers
+
 -------------
-####Jul 21st
+
+**Jul 21st**
+
 - What tasks did I work on / complete?
-Created the ORDER Table and implemented placeOrder method to take the order of items and return the total price of the order
+
+> Created the ORDER Table and implemented placeOrder method to take the order of items and return the total price of the order
+
 - What am I planning to work on next?
-Create MyOrder class and implement a method to display all the order details from the ORDER table
+
+> Create MyOrder class and implement a method to display all the order details from the ORDER table
+
 - What tasks are blocked waiting on another team member?
-Exploring tools to create wireframes
+
+> Exploring tools to create wireframes
 -------------
-####Jul 22nd
+
+**Jul 22nd**
 - What tasks did I work on / complete?
 - What am I planning to work on next?
 - What tasks are blocked waiting on another team member?
