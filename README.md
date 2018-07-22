@@ -58,6 +58,14 @@
 ### Manage Orders API
 ### Payment API
 ### User Authentication
+
+**By Rupal Martin**
+
+- Create necessary classes in the library and followed test-driven development
+- Implement REST API to perform GET, POST actions necessary for the project.
+- Wire-frame the UI for the Create Account and Login screens.
+- Design the Android UI for My Part.
+
 ### User Interface
 ### Cloud Deployment
 
