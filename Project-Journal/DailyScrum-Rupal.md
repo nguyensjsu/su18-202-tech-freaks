@@ -7,6 +7,15 @@
 ## Daily Scrum Report
 
 **Jul 17th**
+<<<<<<< HEAD
+=======
+- First Meeting (17 Jul 2018)
+- We discussed our current capacity and decided to split the API to one team member each.
+- I brushed my java skills by going through youtube videos on how to create maven project,using git, using PostMan for REST API.
+- I also downloaded starbucks app to get a deeper understanding.
+- I also created task for my part and mentioned in To_Do
+- I also created rough Google sheets for monitoring the hours spent.
+>>>>>>> b15f4d5fc4800d27b0ac735bd854308951161c96
 
 - What tasks did I work on / complete?
 
@@ -26,6 +35,11 @@
  > No blockage for me for my next tasks.
 -------------
 **Jul 18th**
+<<<<<<< HEAD
+=======
+- Meeting (19 Jul 2018)
+- Discussed the class names and the methods to implement and validate for all 4 API
+>>>>>>> b15f4d5fc4800d27b0ac735bd854308951161c96
 
 - What tasks did I work on / complete?
 
@@ -63,6 +77,11 @@
 -------------
 
 **Jul 20th**
+<<<<<<< HEAD
+=======
+- Meeting (20 Jul 2018)
+- Decided to create 4 different jar files to reduce dependency among others.
+>>>>>>> b15f4d5fc4800d27b0ac735bd854308951161c96
 
 - What tasks did I work on / complete?
 
@@ -82,6 +101,11 @@
 -------------
 
 **Jul 21st**
+<<<<<<< HEAD
+=======
+- Meeting (21 Jul 2018)
+- Team mutually decided to create one jar instead of 4 different jar files for smoth implementation.
+>>>>>>> b15f4d5fc4800d27b0ac735bd854308951161c96
 
 - What tasks did I work on / complete?
 
@@ -99,6 +123,14 @@
 -------------
 
 **Jul 22nd**
+<<<<<<< HEAD
+=======
+
+- Meeting (22 Jul 2018)
+- Discussed Status updates of individual team members.
+- Decided to create a single controller class instead of 4 controller class.
+
+>>>>>>> b15f4d5fc4800d27b0ac735bd854308951161c96
 - What tasks did I work on / complete?
 - What am I planning to work on next?
 - What tasks are blocked waiting on another team member?
