@@ -100,6 +100,11 @@
 
 **Jul 22nd**
 - What tasks did I work on / complete?
+> Resolved the issue with hitting rest end point from the postman.
+> Explored UI wire frame designing tools.
+> Created a AWS RDS Mysql DB and connected to the DB and tested the connection from java code.
 - What am I planning to work on next?
+> Merge the controller class code to get card id and order details to make payment.
 - What tasks are blocked waiting on another team member?
+> Once I get api or method to get card and order information I will update payment method to use those information.
 -------------
