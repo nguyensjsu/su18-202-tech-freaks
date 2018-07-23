@@ -7,12 +7,12 @@
 ## Daily Scrum Report
 
 **Jul 17th**
-First Meeting (17 Jul 2018)
-We discussed our current capacity and decided to split the API to one team member each.
-I brushed my java skills by going through youtube videos on how to create maven project,using git, using PostMan for REST API.
-I also downloaded starbucks app to get a deeper understanding.
-I also created task for my part and mentioned in To_Do
-I also created rough Google sheets for monitoring the hours spent.
+- First Meeting (17 Jul 2018)
+- We discussed our current capacity and decided to split the API to one team member each.
+- I brushed my java skills by going through youtube videos on how to create maven project,using git, using PostMan for REST API.
+- I also downloaded starbucks app to get a deeper understanding.
+- I also created task for my part and mentioned in To_Do
+- I also created rough Google sheets for monitoring the hours spent.
 
 - What tasks did I work on / complete?
 
@@ -32,8 +32,8 @@ I also created rough Google sheets for monitoring the hours spent.
  >Inexperience in Java, version control management has made the learning curve steep.
 -------------
 **Jul 18th**
-Meeting (19 Jul 2018)
-Discussed the class names and the methods to implement and validate for all 4 API
+- Meeting (19 Jul 2018)
+- Discussed the class names and the methods to implement and validate for all 4 API
 
 - What tasks did I work on / complete?
 
@@ -72,8 +72,8 @@ Discussed the class names and the methods to implement and validate for all 4 AP
 -------------
 
 **Jul 20th**
-Meeting (20 Jul 2018)
-Decided to create 4 different jar files to reduce dependency among others.
+- Meeting (20 Jul 2018)
+- Decided to create 4 different jar files to reduce dependency among others.
 
 - What tasks did I work on / complete?
 
@@ -93,8 +93,8 @@ Decided to create 4 different jar files to reduce dependency among others.
 -------------
 
 **Jul 21st**
-Meeting (21 Jul 2018)
-Team mutually decided to create one jar instead of 4 different jar files for smoth implementation.
+- Meeting (21 Jul 2018)
+- Team mutually decided to create one jar instead of 4 different jar files for smoth implementation.
 
 - What tasks did I work on / complete?
 
@@ -113,9 +113,9 @@ Team mutually decided to create one jar instead of 4 different jar files for smo
 
 **Jul 22nd**
 
-Meeting (22 Jul 2018)
-Discussed Status updates of indiviual team members.
-Decided to create a single controller class instead of 4 controller class.
+- Meeting (22 Jul 2018)
+- Discussed Status updates of individual team members.
+- Decided to create a single controller class instead of 4 controller class.
 
 - What tasks did I work on / complete?
 
