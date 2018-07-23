@@ -111,6 +111,23 @@
 **Jul 22nd**
 
 - What tasks did I work on / complete?
+> Installed Springboot and setup new project
+> Configured AWS RDS with database and necessary tables.
+> Implemented REST APIs that calls the library classes and methods.
+
+- What am I planning to work on next?
+> Modify the database credentials and test REST API functionalities with AWS RDS 
+> Add the AWS RDS credential details in env file.
+
+- What tasks are blocked waiting on another team member?
+> Eclipse dynamic web application required lots of dependencies. So switched to SpringBoot for the controller program.
+
+----
+
+
+**Jul 23rd**
+
+- What tasks did I work on / complete?
 
 
 - What am I planning to work on next?
