@@ -84,7 +84,17 @@
 -------------
 
 **Jul 22nd**
+
 - What tasks did I work on / complete?
+
+Created MyOrder class and implemented a method to display all the order details from the ORDER table
+
 - What am I planning to work on next?
+
+Implement Test cases, export the business logic as a JAR and test the API using Advanced Rest Client.
+
 - What tasks are blocked waiting on another team member?
+
+Used Pencil tool to design wireframes but it was diffcult. Using Keynote for wireframes.
+
 -------------
