@@ -108,3 +108,15 @@
 - What tasks are blocked waiting on another team member?
 > Once I get api or method to get card and order information I will update payment method to use those information.
 -------------
+**Jul 23nd**
+- What tasks did I work on / complete?
+> Tried to solve connection error while connecting to AWS RDS db.
+> Resolved merge conflict in the controller class and merged my branch with the master.
+> Added new api for getting payment details using ID.
+
+- What am I planning to work on next?
+> Merge the controller class code to get card id and order details to make payment.
+> Prepare wireframes for payment details using Balamiq tool.
+- What tasks are blocked waiting on another team member?
+> Card details and order details needed to complete payment process.
+-------------
