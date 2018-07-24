@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import starbucks.*;
-import com.starbucks.library.*;
+//import starbucks.*;
+//import com.starbucks.library.*;
 import java.sql.Connection;
 
 @RestController
@@ -22,9 +22,9 @@ public class StarbucksController {
 //	  Author - Harini Balakrishnan 
 // 	  Database credentials and initialize classes from AddCard JAR file	
 	com.starbucks.library.MySqlConnection mysql = new  com.starbucks.library.MySqlConnection();
-	String url = "";    
-    String username = ""; 
-    String password = "";
+	String url = "" ; // Enter the AWS RDS endpoint here
+    String username = "" ; // Enter the AWS RDS username here
+    String password = "" ; // Enter the AWS RDS password here 
     Connection connection = mysql.getConnection(url, username, password);
 	com.starbucks.library.MyCards  mycards = new com.starbucks.library.MyCards();
 	com.starbucks.library.AddCard addcard = new com.starbucks.library.AddCard();
@@ -60,7 +60,6 @@ public class StarbucksController {
 		return mycards.getAllCards();
 	}
 	
-	
 //	  AddCard API - Harini Balakrishnan 
 //	  POST - create a new card with JSON format user input 
 	@PostMapping(path = "/addcard", consumes = "application/json")
@@ -77,12 +76,11 @@ public class StarbucksController {
 		return mycards.updateCardBalance(cardID, card.getCardBalance());
 	}
 	
-	
 //	  AddCard API - Harini Balakrishnan 
 //	  DELETE - delete a card from the database 
 	@DeleteMapping(path = "/delete/{cardID}")
 	public boolean deleteCard(@PathVariable String cardID) {
 		return mycards.deleteCard(cardID);
 	}
-
+	
 }
