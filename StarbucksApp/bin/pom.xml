@@ -36,30 +36,22 @@
 			<scope>test</scope>
 		</dependency>
 		
-		<dependency>
-			<groupId>com.app</groupId>
-            <artifactId>starbucks</artifactId>
-            <version>1.0</version>
-            <scope>system</scope>
-            <systemPath>${basedir}/lib/starbucks.jar</systemPath>
+		<dependency><groupId>com.app</groupId>
+                <artifactId>starbucks</artifactId>
+                <version>1.0</version>
+                <scope>system</scope>
+                <systemPath>${basedir}/lib/starbucks.jar</systemPath>
        </dependency>
-       <dependency>
-			<groupId>com.app</groupId>
-            <artifactId>starbucks_addcard</artifactId>
-            <version>1.0</version>
-            <scope>system</scope>
-            <systemPath>${basedir}/lib/starbucks_addcard.jar</systemPath>
-       </dependency>
-       
-	<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
-	<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
-	<dependency>
-	    <groupId>mysql</groupId>
-	    <artifactId>mysql-connector-java</artifactId>
-	    <version>8.0.11</version>
-	</dependency>
+<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+<dependency>
+    <groupId>mysql</groupId>
+    <artifactId>mysql-connector-java</artifactId>
+    <version>8.0.11</version>
+</dependency>
 
-</dependencies>
+
+	</dependencies>
 
 	<build>
 	
@@ -67,10 +59,13 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-
-			</plugin>		
+			</plugin>
+			
 			
 	</plugins>
+
+
+
 		
 	</build>
 
