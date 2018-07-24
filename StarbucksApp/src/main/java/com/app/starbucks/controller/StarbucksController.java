@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import starbucks.*;
 import com.starbucks.library.*;
@@ -36,7 +37,7 @@ public class StarbucksController {
 	public String home() {
 		System.out.println("Connection Details: \n" + connection);
 
-		return "Hello World!";
+		return "Hello from Techfreaks!";
 	}
 
 	/*
@@ -58,6 +59,15 @@ public class StarbucksController {
 
 		return (mp.getAllPayments());
 	}
+	
+	/*
+	 * @Supreetha for retrieving payment all payment details from DB.
+	 */
+	
+	 @RequestMapping(value = "/getPayments/{id}", method = RequestMethod.GET)
+	 public  starbucks.Payment getPayment(@PathVariable int id){
+	   return (mp.getPayment(id));
+	  } 
 	
 	
 	
