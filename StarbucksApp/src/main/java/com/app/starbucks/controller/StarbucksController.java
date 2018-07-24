@@ -70,4 +70,11 @@ public class StarbucksController {
 	}
 	
 	
+//	  AddCard API - Harini Balakrishnan 
+//	  PUT - update the card's balance with user input 
+	@PutMapping(path = "/update/{cardID}", consumes = "application/json")
+	public boolean updateCard(@PathVariable String cardID, @RequestBody com.starbucks.library.Card card) {
+		return mycards.updateCardBalance(cardID, card.getCardBalance());
+	}
+
 }
