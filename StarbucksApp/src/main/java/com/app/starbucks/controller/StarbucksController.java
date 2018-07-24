@@ -76,5 +76,13 @@ public class StarbucksController {
 	public boolean updateCard(@PathVariable String cardID, @RequestBody com.starbucks.library.Card card) {
 		return mycards.updateCardBalance(cardID, card.getCardBalance());
 	}
+	
+	
+//	  AddCard API - Harini Balakrishnan 
+//	  DELETE - delete a card from the database 
+	@DeleteMapping(path = "/delete/{cardID}")
+	public boolean deleteCard(@PathVariable String cardID) {
+		return mycards.deleteCard(cardID);
+	}
 
 }
