@@ -121,6 +121,7 @@
 
 - What tasks are blocked waiting on another team member?
 > Eclipse dynamic web application required lots of dependencies. So switched to SpringBoot for the controller program.
+> M 
 
 ----
 
@@ -128,13 +129,18 @@
 **Jul 23rd**
 
 - What tasks did I work on / complete?
-
+> Modified the database credentials with AWS RDS credentails 
+> Implement 5 REST APIs and tested using Advance Chrome REST API.
+> Started User Interface with basic Android simulator.
 
 - What am I planning to work on next?
+> Complete the userinterface with buttons and list view.
+> Call the REST API and integrate the UI view with controller 
+> Test the AddCard functionality flow
 
 
 - What tasks are blocked waiting on another team member?
-
+> Had MySQL JDBC connector issue. Resolved by upgrading to JRE 9.0 version and add the JAR file to classpath
 
 ----
 ## XP Core Values
