@@ -60,4 +60,14 @@ public class StarbucksController {
 		return mycards.getAllCards();
 	}
 	
+	
+//	  AddCard API - Harini Balakrishnan 
+//	  POST - create a new card with JSON format user input 
+	@PostMapping(path = "/addcard", consumes = "application/json")
+	public void insertCard(@RequestBody com.starbucks.library.Card card) {
+		System.out.println("id: " + card.getCardID() );
+		addcard.insertCard(card.getCardID() , card.getCardCode(), card.getCardBalance(),card.getCardUserID(), card.getActiveStatus());
+	}
+	
+	
 }
