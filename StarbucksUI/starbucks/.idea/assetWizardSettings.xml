@@ -23,7 +23,7 @@
                                           <PersistentState>
                                             <option name="values">
                                               <map>
-                                                <entry key="url" value="jar:file:/Users/harinibalakrishnan/Desktop/Android%20Studio.app/Contents/plugins/android/lib/android.jar!/images/material_design_icons/navigation/ic_chevron_left_black_24dp.xml" />
+                                                <entry key="url" value="jar:file:/Users/harinibalakrishnan/Desktop/Android%20Studio.app/Contents/plugins/android/lib/android.jar!/images/material_design_icons/content/ic_add_black_24dp.xml" />
                                               </map>
                                             </option>
                                           </PersistentState>
@@ -44,11 +44,10 @@
                                   </option>
                                   <option name="values">
                                     <map>
-                                      <entry key="assetType" value="IMAGE" />
                                       <entry key="imageAsset" value="$PROJECT_DIR$/../starbucks-logo.png" />
-                                      <entry key="outputName" value="ic_logo" />
-                                      <entry key="theme" value="HOLO_DARK" />
-                                      <entry key="themeColor" value="127c76" />
+                                      <entry key="outputName" value="ic_add" />
+                                      <entry key="theme" value="CUSTOM" />
+                                      <entry key="themeColor" value="fefdff" />
                                     </map>
                                   </option>
                                 </PersistentState>

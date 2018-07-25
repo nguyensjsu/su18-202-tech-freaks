@@ -1,3 +1,20 @@
 <resources>
     <string name="app_name">starbucks</string>
+    <string name="cards">CARDS</string>
+    <string name="button">Button</string>
+    <string name="todo">TODO</string>
+    <string name="Checkout">checkout</string>
+    <string name="_10_30_am">10:30 AM</string>
+    <string name="card_number">card number</string>
+    <string name="add_card">Add Card</string>
+    <string name="checkout">Checkout</string>
+    <string name="current_balance">Current Balance</string>
+    <string name="as_of_today_at">As of today at</string>
+    <string name="title_activity_add_card">AddCardActivity</string>
+    <string name="all_cards">All Cards</string>
+    <string name="enter_starbucks_card_number">Enter Starbucks Card Number</string>
+    <string name="set_as_active_card">Set as active card</string>
+    <string name="confirm">Confirm</string>
+    <string name="cancel">Cancel</string>
+    <string name="todo">TODO</string>
 </resources>
