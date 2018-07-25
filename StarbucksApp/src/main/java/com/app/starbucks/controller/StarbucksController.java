@@ -19,6 +19,7 @@ import com.starbucks.controller.IOrderAndItem;
 import com.starbucks.controller.OrderAndItemManager;
 import com.starbucks.library.*;
 import com.starbucks.model.ItemInfo;
+import com.starbucks.model.OrderResponse;
 import com.starbucks.model.OrderedItemsInfo;
 
 import java.sql.Connection;
@@ -40,8 +41,10 @@ public class StarbucksController {
 	com.starbucks.library.Card card = new com.starbucks.library.Card();
 	starbucks.ConnectionManager con = new starbucks.ConnectionManager(url, username, password);
 	
-	int orderNumber=0;
+	
+	OrderResponse orderDetails=new OrderResponse();
 	IOrderAndItem orderInfo=new OrderAndItemManager();
+
 			
 	@RequestMapping("/")
 	public String home() {
@@ -78,8 +81,6 @@ public class StarbucksController {
 	 public  starbucks.Payment getPayment(@PathVariable int id){
 	   return (mp.getPayment(id));
 	  } 
-	
-	
 	
 
 	// AddCard API - Harini Balakrishnan
@@ -124,6 +125,7 @@ public class StarbucksController {
 	 * @Ravali 
 	 * Managed Order API - to get Menu Items
 	 */
+	
 
 	@GetMapping("/getMenuItems")
 	public ArrayList<ItemInfo> getAllItems() {
@@ -137,7 +139,7 @@ public class StarbucksController {
 	 * @Ravali 
 	 * Managed Order API - to place order
 	 */
-	
+	String cardID = card.getCardID();
 	@GetMapping(path = "/placeOrder/{cardID}/{items}")
 	public boolean placeOrder(@PathVariable String cardID, @PathVariable String items) 
 	{
@@ -145,8 +147,9 @@ public class StarbucksController {
 		ArrayList<String> itemListOrdered=new ArrayList<String>();
 		itemListOrdered.addAll(Arrays.asList(items.split(",")));
 
-		orderNumber=orderInfo.placeOrder(itemListOrdered, cardID);
-		if (orderNumber!=0)
+		int temp=orderInfo.placeOrder(itemListOrdered, cardID);
+		orderDetails.setOrderNumber(Integer.toString(temp));
+		if (temp!=0)
 				return true;
 		else
 			return false;
@@ -161,7 +164,9 @@ public class StarbucksController {
 	public OrderedItemsInfo getOrder(@PathVariable int orderNumber) 
 	{
 		orderInfo.setConnectionInfo(url,username,password);	
-		return orderInfo.getOrderDetails(orderNumber);
+		OrderedItemsInfo itemsInfo=orderInfo.getOrderDetails(orderNumber);
+		orderDetails.setTotalPrice(itemsInfo.getTotalPrice().doubleValue());
+		return itemsInfo;
 		
 	} 
 	
