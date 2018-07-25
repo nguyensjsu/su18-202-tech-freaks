@@ -2,6 +2,12 @@
 <menu xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <item
+        android:id="@+id/navigation_mycards"
+        android:enabled="true"
+        android:icon="@drawable/ic_mycards"
+        app:showAsAction="ifRoom"
+        android:title="MyCards"/>
 
     <item
         android:id="@+id/navigation_menu"
@@ -9,13 +15,6 @@
         android:icon="@drawable/ic_menu"
         android:title="Menu"
         app:showAsAction="ifRoom" />
-
-    <item
-        android:id="@+id/navigation_mycards"
-        android:enabled="true"
-        android:icon="@drawable/ic_mycards"
-        app:showAsAction="ifRoom"
-        android:title="MyCards"/>
 
     <item
         android:id="@+id/navigation_payment"
