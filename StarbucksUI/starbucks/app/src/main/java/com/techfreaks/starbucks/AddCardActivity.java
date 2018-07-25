@@ -5,6 +5,7 @@ import android.content.Context;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
@@ -66,24 +67,43 @@ public class AddCardActivity extends AppCompatActivity {
                 params.put("cardUserID", "1");
                 params.put("cardBalance", "20.00");
 
+                if(cardID.getText().toString() == "" || cardID.getText().toString().length() > 9 ){
+                    builder.setMessage("Please enter 9 digit numeric ID");
+                    AlertDialog alert = builder.create();
+                    alert.setTitle("Invalid Card ID");
+                    alert.show();
+                }
+
+
+                if(cardCode.getText().toString() == "" || cardCode.getText().toString().length() > 3 ){
+                    builder.setMessage("Please enter 3 digit code.");
+                    AlertDialog alert = builder.create();
+                    alert.setTitle("Invalid Card Code");
+                    alert.show();
+                }
 
                 JsonObjectRequest request_json = new JsonObjectRequest(url, new JSONObject(params),
                         new Response.Listener<JSONObject>() {
                             @Override
                             public void onResponse(JSONObject response) {
+
                                 //Process os success response
                                 System.out.println(response);
                             }
                         }, new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        VolleyLog.e("Error: ", error.getMessage());
+                        VolleyLog.e("Error: ", error.toString());
                     }
                 });
 
-// add the request object to the queue to be executed
+                // add the request object to the queue to be executed
                 System.out.println(request_json);
                 requestQueue.add(request_json);
+                builder.setMessage("New Card Inserted");
+                AlertDialog alert = builder.create();
+                alert.setTitle("Congrats!!!");
+                alert.show();
 
             }
         });
