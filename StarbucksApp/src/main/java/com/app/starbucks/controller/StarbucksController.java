@@ -24,9 +24,9 @@ public class StarbucksController {
 	// Author - Harini Balakrishnan
 	// Database credentials and initialize classes from AddCard JAR file
 	com.starbucks.library.MySqlConnection mysql = new com.starbucks.library.MySqlConnection();
-	String url = ""; // Enter the AWS RDS endpoint here
-	String username = ""; // Enter the AWS RDS username here
-	String password = ""; // Enter the AWS RDS password here
+	String url = "jdbc:mysql://dbinstancestarbucks.cdw04dgws34h.us-west-1.rds.amazonaws.com:3306/dbstarbucks"; // Enter the AWS RDS endpoint here
+	String username = "root"; // Enter the AWS RDS username here
+	String password = "techfreaks"; // Enter the AWS RDS password here
 	Connection connection = mysql.getConnection(url, username, password);
 	com.starbucks.library.MyCards mycards = new com.starbucks.library.MyCards();
 	com.starbucks.library.AddCard addcard = new com.starbucks.library.AddCard();
