@@ -119,14 +119,14 @@
 
 - What tasks did I work on / complete?
 
->
+> Tested the API using Advanced Rest Client.
 
 - What am I planning to work on next?
 
->
+> Need to work on remaining wireframes.
 
 - What tasks are blocked waiting on another team member?
 
->
+> Had MySQL connector issue. Upgraded JRE to version 10 and added JAR file to the buildpath.
 
 -------------
