@@ -1,6 +1,7 @@
 package com.app.starbucks.controller;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -13,7 +14,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import starbucks.*;
+
+import com.starbucks.controller.IOrderAndItem;
+import com.starbucks.controller.OrderAndItemManager;
 import com.starbucks.library.*;
+import com.starbucks.model.ItemInfo;
+import com.starbucks.model.OrderedItemsInfo;
+
 import java.sql.Connection;
 
 @RestController
@@ -32,6 +39,9 @@ public class StarbucksController {
 	com.starbucks.library.AddCard addcard = new com.starbucks.library.AddCard();
 	com.starbucks.library.Card card = new com.starbucks.library.Card();
 	starbucks.ConnectionManager con = new starbucks.ConnectionManager(url, username, password);
+	
+	int orderNumber=0;
+	IOrderAndItem orderInfo=new OrderAndItemManager();
 			
 	@RequestMapping("/")
 	public String home() {
@@ -108,5 +118,64 @@ public class StarbucksController {
 	public boolean deleteCard(@PathVariable String cardID) {
 		return mycards.deleteCard(cardID);
 	}
+	
+
+/*
+	 * @Ravali 
+	 * Managed Order API - to get Menu Items
+	 */
+
+	@GetMapping("/getMenuItems")
+	public ArrayList<ItemInfo> getAllItems() {
+		orderInfo.setConnectionInfo(url,username,password);		
+		//List of Items.
+		ArrayList<ItemInfo> items=orderInfo.getMenuItems();
+		return items;		
+	}	
+	
+	/*
+	 * @Ravali 
+	 * Managed Order API - to place order
+	 */
+	
+	@GetMapping(path = "/placeOrder/{cardID}/{items}")
+	public boolean placeOrder(@PathVariable String cardID, @PathVariable String items) 
+	{
+		orderInfo.setConnectionInfo(url,username,password);	
+		ArrayList<String> itemListOrdered=new ArrayList<String>();
+		itemListOrdered.addAll(Arrays.asList(items.split(",")));
+
+		orderNumber=orderInfo.placeOrder(itemListOrdered, cardID);
+		if (orderNumber!=0)
+				return true;
+		else
+			return false;
+	}
+	
+	/*
+	 * @Ravali 
+	 * Managed Order API - to get Order
+	 */
+	
+	@GetMapping(path = "/getOrder/{orderNumber}")
+	public OrderedItemsInfo getOrder(@PathVariable int orderNumber) 
+	{
+		orderInfo.setConnectionInfo(url,username,password);	
+		return orderInfo.getOrderDetails(orderNumber);
+		
+	} 
+	
+	/*
+	 * @Ravali 
+	 * Managed Order API - to cancel order
+	 */
+	@GetMapping(path = "/cancelOrder/{orderNumber}")
+	public Boolean cancelOrder(@PathVariable int orderNumber) 
+	{
+		orderInfo.setConnectionInfo(url,username,password);	
+		return orderInfo.cancelOrder(orderNumber);
+		
+	} 
+
 
 }
