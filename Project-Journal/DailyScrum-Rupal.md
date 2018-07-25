@@ -141,10 +141,12 @@
 - What am I planning to work on next?
 >Import the project to SPRING BOOT STS
 >Test the API.
+>Create GET API for getting user details of user
+>Create POST API to update the user details
 
 - What tasks are blocked waiting on another team member?
 
-> No blockage for my next tasks.
+> Failed to connect to the common newly created team database due to firewall issues
 
 -------------
 
@@ -152,11 +154,29 @@
 
 
 - What tasks did I work on / complete?
-
+>Create GET API for getting user details of user.
+>Create POST API to update the user details.
+>Tested all the API.
 
 - What am I planning to work on next?
+>Convert jar into library
+>Import jar into Spring boot STS
 
 
 - What tasks are blocked waiting on another team member?
 
 > No blockage for my next tasks.
+
+-------------
+
+**Jul 25nd**
+
+
+- What tasks did I work on / complete?
+
+
+- What am I planning to work on next?
+
+- What tasks are blocked waiting on another team member?
+
+
