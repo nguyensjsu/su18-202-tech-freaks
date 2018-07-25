@@ -10,6 +10,7 @@ import android.view.View;;
 import android.content.Context;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.content.Intent;
 
@@ -146,6 +147,14 @@ public class MyCardsActivity extends AppCompatActivity {
             if (inflator != null) {
                 v = inflator.inflate(R.layout.custom_actionbar, null);
             }
+            ImageButton refresh = v.findViewById(R.id.refreshImageButton);
+            refresh.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    finish();
+                    startActivity(getIntent());
+                }
+            });
             actionBar.setCustomView(v);
         }
     }

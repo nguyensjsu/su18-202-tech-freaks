@@ -2,15 +2,18 @@ package com.techfreaks.starbucks;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ImageButton;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.JsonObjectRequest;
@@ -35,6 +38,8 @@ public class AddCardActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        requestWindowFeature(Window.FEATURE_ACTION_BAR);
+        setupActionBar();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_cards);
 
@@ -105,6 +110,9 @@ public class AddCardActivity extends AppCompatActivity {
                 alert.setTitle("Congrats!!!");
                 alert.show();
 
+                cardID.setText(null);
+                cardCode.setText(null);
+                finish();
             }
         });
      }
@@ -121,9 +129,15 @@ public class AddCardActivity extends AppCompatActivity {
             if (inflator != null) {
                 v = inflator.inflate(R.layout.custom_actionbar, null);
             }
+            ImageButton refresh = v.findViewById(R.id.refreshImageButton);
+            refresh.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    finish();
+                    startActivity(getIntent());
+                }
+            });
             actionBar.setCustomView(v);
         }
     }
-
-
 }
