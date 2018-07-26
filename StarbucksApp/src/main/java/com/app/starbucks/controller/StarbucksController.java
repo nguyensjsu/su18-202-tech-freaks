@@ -33,6 +33,9 @@ import java.sql.Connection;
 
 @RestController
 public class StarbucksController {
+	//user authentication by Rupal
+	com.app.ManageUsers manageUsers = new com.app.ManageUsers();
+
 	starbucks.ManagePayments mp = new starbucks.ManagePayments();
 	List<starbucks.Payment> paymentsList = new ArrayList<>();
 
@@ -237,7 +240,44 @@ public class StarbucksController {
         return orderInfo.cancelOrder(orderNumber);
         
     }
-    
+
+    /*
+     * @Rupal
+     * @rupalmartin for register users .
+     */
+    @PostMapping("/register")
+    public boolean registerUser(@RequestBody com.app.User user) {
+        return (manageUsers.registerUser(user.getUsername(), user.getPassword(), user.getEmail()));
+    }
+
+    /*
+     * @Rupal
+     * @rupalmartin login users .
+     */
+    @PostMapping(path = "/login", consumes = "application/json")
+    public String login(@RequestBody com.app.User user) {
+        System.out.println("id: " + user.getUsername());
+        return (manageUsers.login(user.getUsername(), user.getPassword()));
+    }
+
+    /*
+     * @Rupal
+     * @rupalmartin update users password.
+     */
+    @PostMapping(path = "/updatePassword", consumes = "application/json")
+    public String updatePassword(@RequestBody com.app.User user) {
+        System.out.println("id: " + user.getUsername());
+        return (manageUsers.updatePassword(user.getUsername(), user.getPassword()));
+    }
+
+    /*
+     * @Rupal
+     * @rupalmartin for retrieving  all users details from DB.
+     */
+    @GetMapping("/users")
+    public ArrayList<com.app.User> getAllUser() {
+        return (manageUsers.getAllUser());
+    }
 
 
 
