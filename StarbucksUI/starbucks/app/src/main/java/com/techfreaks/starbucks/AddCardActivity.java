@@ -3,11 +3,14 @@ package com.techfreaks.starbucks;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
@@ -34,7 +37,7 @@ public class AddCardActivity extends AppCompatActivity {
     AlertDialog.Builder builder;
     Boolean activeCard = false;
     RequestQueue requestQueue;
-    String url = "http://10.0.2.2:8080/addcard";
+    private String url = "http://10.0.2.2:8080/addcard";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +45,9 @@ public class AddCardActivity extends AppCompatActivity {
         setupActionBar();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_cards);
+
+        BottomNavigationView mBottomNav = (BottomNavigationView) findViewById(R.id.navigation);
+        setNavlistener(mBottomNav);
 
         cancelBtn = (Button) findViewById(R.id.cancelButton);
         insertBtn = (Button) findViewById(R.id.confrimButton);
@@ -116,6 +122,45 @@ public class AddCardActivity extends AppCompatActivity {
             }
         });
      }
+
+
+    private void setNavlistener(BottomNavigationView mBottomNav){
+        mBottomNav.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()) {
+
+                    case R.id.navigation_mycards: {
+                        Intent intent = new Intent(AddCardActivity.this, MyCardsActivity.class);
+                        startActivity(intent);
+                        break;
+                    }
+                    case R.id.navigation_menu: {
+                        // Need to change the activity to menu acitivty here
+                        Intent intent = new Intent(AddCardActivity.this, AddCardActivity.class);
+                        startActivity(intent);
+                        break;
+                    }
+                    case R.id.navigation_payment: {
+                        // Need to change the activity to menu acitivty here
+                        Intent intent = new Intent(AddCardActivity.this, AllCardsActivity.class);
+                        startActivity(intent);
+                        break;
+                    }
+                    case R.id.navigation_user: {
+
+                        break;
+                    }
+                    case R.id.navigation_settings: {
+                        Intent intent = new Intent(AddCardActivity.this, SettingsActivity.class);
+                        startActivity(intent);
+                        break;
+                    }
+                }
+                return true;
+            }
+        });
+    }
 
     @SuppressLint("InflateParams")
     private void setupActionBar() {
