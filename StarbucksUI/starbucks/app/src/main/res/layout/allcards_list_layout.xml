@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp">
+
+    <TextView
+        android:id="@+id/cardIdText"
+        android:layout_width="93dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textAlignment="textStart"
+        android:textColor="@color/Black"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/cardBalanceTextView"
+        android:layout_width="9dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textAlignment="center"
+        android:textColor="@color/DarkBlue"
+        android:textStyle="bold|italic" />
+
+    <Button
+        android:id="@+id/deleteCard"
+        android:layout_width="4dp"
+        android:layout_height="31dp"
+        android:layout_weight="1"
+        android:background="@color/Red"
+        android:text="@string/delete"
+        android:textAppearance="@style/TextAppearance.AppCompat.Light.SearchResult.Subtitle" />
+
+
+</LinearLayout>

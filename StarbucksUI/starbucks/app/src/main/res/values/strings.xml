@@ -17,4 +17,9 @@
     <string name="confirm">Confirm</string>
     <string name="cancel">Cancel</string>
     <string name="_3_digit_code">3 digit code</string>
+    <string name="_12_66">$ 12.66</string>
+    <string name="delete">DELETE</string>
+    <string name="all_cards1">All Cards</string>
+    <string name="user_name">User Name</string>
+    <string name="view_transactions">View Transactions</string>
 </resources>
