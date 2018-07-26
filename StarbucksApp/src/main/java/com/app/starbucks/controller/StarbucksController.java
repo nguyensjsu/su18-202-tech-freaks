@@ -175,7 +175,7 @@ public class StarbucksController {
 	 * Managed Order API - to place order
 	 */
 	String cardID = card.getCardID();
-	@GetMapping(path = "/placeOrder/{cardID}/{items}")
+	@PostMapping(path = "/placeOrder/{cardID}/{items}")
 	public boolean placeOrder(@PathVariable String cardID, @PathVariable String items) 
 	{
 		orderInfo.setConnectionInfo(url,username,password);	
@@ -209,7 +209,7 @@ public class StarbucksController {
 	 * @Ravali 
 	 * Managed Order API - to cancel order
 	 */
-	@GetMapping(path = "/cancelOrder/{orderNumber}")
+	@PostMapping(path = "/cancelOrder/{orderNumber}")
 	public Boolean cancelOrder(@PathVariable int orderNumber) 
 	{
 		orderInfo.setConnectionInfo(url,username,password);	
