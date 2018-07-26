@@ -42,6 +42,7 @@ public class StarbucksController {
 	String url = ""; // Enter the AWS RDS endpoint here
 	String username = ""; // Enter the AWS RDS username here
 	String password = ""; // Enter the AWS RDS password here
+    String dbname="starbucksdb";
 	Connection connection = mysql.getConnection(url, username, password);
 	com.starbucks.library.MyCards mycards = new com.starbucks.library.MyCards();
 	com.starbucks.library.AddCard addcard = new com.starbucks.library.AddCard();
@@ -157,78 +158,87 @@ public class StarbucksController {
 	public boolean deleteCard(@PathVariable String cardID) {
 		return mycards.deleteCard(cardID);
 	}
-	
+    private String getCardID() {
+        card = mycards.getActiveCard();
+        return card.getCardID();
+    }
+    
+    /*
+     * @Ravali
+     * Managed Order API - to get Menu Items
+     */
+    
+    
+    @GetMapping("/getMenuItems")
+    public ArrayList<ItemInfo> getAllItems() {
+        
+        System.out.println("url "+url);
+        System.out.println("username "+username);
+        System.out.println("password "+password);
+        
+        orderInfo.setConnectionInfo(url,username,password,dbname);
+        //List of Items.
+        ArrayList<ItemInfo> items=orderInfo.getMenuItems();
+        return items;
+    }    
+    
+    /*
+     * @Ravali
+     * Managed Order API - to place order
+     */
+    
+    //String cardID = card.getCardID();
+    @PostMapping(path = "/placeOrder", consumes = "application/json")
+    public boolean placeOrder(@RequestBody OrderInfo orderRequest)
+    {
+        
+        orderInfo.setConnectionInfo(url,username,password,dbname);
+        ArrayList<String> itemListOrdered=new ArrayList<String>();
+        itemListOrdered.addAll(Arrays.asList(orderRequest.getItemList().split(",")));
+        //int temp=orderInfo.placeOrder(itemListOrdered, orderRequest.getCardId());
+        System.out.println("CardId is" + orderRequest.getCardId());
+        System.out.println("Item List is" + orderRequest.getItemList());
+        String cardId = getCardID();
+        orderRequest.setCardId(cardId);
+        int temp=orderInfo.placeOrder(itemListOrdered, cardId);
+        //int temp=orderInfo.placeOrder(itemListOrdered, orderRequest.getCardId());
+        
+        orderDetails.setOrderNumber(Integer.toString(temp));
+        if (temp!=0)
+            return true;
+        else
+            return false;
+    }
+    
+    /*
+     * @Ravali
+     * Managed Order API - to get Order
+     */
+    
+    @GetMapping(path = "/getOrder/{orderNumber}")
+    public OrderedItemsInfo getOrder(@PathVariable int orderNumber)
+    {
+        orderInfo.setConnectionInfo(url,username,password,dbname);
+        OrderedItemsInfo itemsInfo=orderInfo.getOrderDetails(orderNumber);
+        orderDetails.setTotalPrice(itemsInfo.getTotalPrice().doubleValue());
+        return itemsInfo;
+        
+    }
+    
+    /*
+     * @Ravali
+     * Managed Order API - to cancel order
+     */
+    
+    @DeleteMapping(path = "/cancelOrder/{orderNumber}")
+    public Boolean cancelOrder(@PathVariable int orderNumber)
+    {
+        orderInfo.setConnectionInfo(url,username,password,dbname);
+        return orderInfo.cancelOrder(orderNumber);
+        
+    }
+    
 
-/*
-	 * @Ravali 
-	 * Managed Order API - to get Menu Items
-	 */
-	
-
-	@GetMapping("/getMenuItems")
-	public ArrayList<ItemInfo> getAllItems() {
-		orderInfo.setConnectionInfo(url,username,password);		
-		//List of Items.
-		ArrayList<ItemInfo> items=orderInfo.getMenuItems();
-		return items;		
-	}	
-	
-	private String getCardID() {
-		card = mycards.getActiveCard();
-			return card.getCardID();
-		}
-	
-	/*
-	 * @Ravali 
-	 * Managed Order API - to place order
-	 */
-
-	//String cardID = card.getCardID();
-	@PostMapping(path = "/placeOrder", consumes = "application/json")
-	public boolean placeOrder(@RequestBody OrderInfo orderRequest) 
-	{
-		orderInfo.setConnectionInfo(url,username,password);	
-		ArrayList<String> itemListOrdered=new ArrayList<String>();
-		itemListOrdered.addAll(Arrays.asList(orderRequest.getItemList().split(",")));
-		//int temp=orderInfo.placeOrder(itemListOrdered, orderRequest.getCardId());
-		String cardId = getCardID();
-		orderRequest.setCardId(cardId);		
-		int temp=orderInfo.placeOrder(itemListOrdered, getCardID());
-
-		orderDetails.setOrderNumber(Integer.toString(temp));
-		if (temp!=0)
-				return true;
-		else
-				return false;
-	}
-	
-	/*
-	 * @Ravali 
-	 * Managed Order API - to get Order
-	 */
-	
-	@GetMapping(path = "/getOrder/{orderNumber}")
-	public OrderedItemsInfo getOrder(@PathVariable int orderNumber) 
-	{
-		orderInfo.setConnectionInfo(url,username,password);	
-		OrderedItemsInfo itemsInfo=orderInfo.getOrderDetails(orderNumber);
-		orderDetails.setTotalPrice(itemsInfo.getTotalPrice().doubleValue());
-		return itemsInfo;
-		
-	} 
-	
-	/*
-	 * @Ravali 
-	 * Managed Order API - to cancel order
-	 */
-
-	@DeleteMapping(path = "/cancelOrder/{orderNumber}")
-	public Boolean cancelOrder(@PathVariable int orderNumber) 
-	{
-		orderInfo.setConnectionInfo(url,username,password);	
-		return orderInfo.cancelOrder(orderNumber);
-		
-	} 
 
 
 }
