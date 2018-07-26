@@ -25,6 +25,7 @@ import com.starbucks.controller.IOrderAndItem;
 import com.starbucks.controller.OrderAndItemManager;
 import com.starbucks.library.*;
 import com.starbucks.model.ItemInfo;
+import com.starbucks.model.OrderInfo;
 import com.starbucks.model.OrderResponse;
 import com.starbucks.model.OrderedItemsInfo;
 
@@ -91,10 +92,10 @@ public class StarbucksController {
 	/*
 	 * @Supreetha for calling REST API for getting card id.
 	 */
-	private String getCardID() {
+	/*private String getCardID() {
 		card= restTemplate.getForObject("http://localhost:8080/mycards/active" , Card.class);
 		return card.getCardID();
-	}
+	}*/
 
 	
 	
@@ -170,19 +171,27 @@ public class StarbucksController {
 		return items;		
 	}	
 	
+	private String getCardID() {
+		card = mycards.getActiveCard();
+			return card.getCardID();
+		}
+	
 	/*
 	 * @Ravali 
 	 * Managed Order API - to place order
 	 */
-	String cardID = card.getCardID();
-	@GetMapping(path = "/placeOrder/{cardID}/{items}")
-	public boolean placeOrder(@PathVariable String cardID, @PathVariable String items) 
+	//String cardID = card.getCardID();
+	@PostMapping(path = "/placeOrder", consumes = "application/json")
+	public boolean placeOrder(@RequestBody OrderInfo orderRequest) 
 	{
 		orderInfo.setConnectionInfo(url,username,password);	
 		ArrayList<String> itemListOrdered=new ArrayList<String>();
-		itemListOrdered.addAll(Arrays.asList(items.split(",")));
+		itemListOrdered.addAll(Arrays.asList(orderRequest.getItemList().split(",")));
+		//int temp=orderInfo.placeOrder(itemListOrdered, orderRequest.getCardId());
+		String cardId = getCardID();
+		orderRequest.setCardId(cardId);		
+		int temp=orderInfo.placeOrder(itemListOrdered, getCardID());
 
-		int temp=orderInfo.placeOrder(itemListOrdered, cardID);
 		orderDetails.setOrderNumber(Integer.toString(temp));
 		if (temp!=0)
 				return true;
@@ -209,7 +218,7 @@ public class StarbucksController {
 	 * @Ravali 
 	 * Managed Order API - to cancel order
 	 */
-	@GetMapping(path = "/cancelOrder/{orderNumber}")
+	@DeleteMapping(path = "/cancelOrder/{orderNumber}")
 	public Boolean cancelOrder(@PathVariable int orderNumber) 
 	{
 		orderInfo.setConnectionInfo(url,username,password);	
