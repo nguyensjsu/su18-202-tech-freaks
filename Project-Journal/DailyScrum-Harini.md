@@ -159,6 +159,20 @@
 > Waiting for User authntication API and Order API.
 
 ----
+**Jul 25th**
+- What tasks did I work on / complete?
+> Designed MyCards and AddCard screens.
+> Integrated REST API response with the UI.
+> Set navigation bottom custom layout and customized action bar.
+
+- What am I planning to work on next?
+> Design AllCards Screen and GET all cards JSON add it to ListView.
+> Design the Settings screen with basic navigation and action bar.
+
+- What tasks are blocked waiting on another team member?
+> Awaiting for teammates to complete their REST API parts. Need to deploy the controller to AWS EC2 and get EC2 urls in Andorid application. Delayed by 2 days.
+
+----
 
 ## XP Core Values
 
