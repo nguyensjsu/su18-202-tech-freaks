@@ -130,3 +130,19 @@
 > Had MySQL connector issue. Upgraded JRE to version 10 and added JAR file to the buildpath.
 
 -------------
+
+**Jul 25th**
+
+- What tasks did I work on / complete?
+
+> Worked on Wireframes designing. Exported jar of Managed Order API and implemented web services.
+
+- What am I planning to work on next?
+
+> Need to work on UI part of Android application.
+
+- What tasks are blocked waiting on another team member?
+
+> Need to explore Volley Library for Android to implement REST services in Android App.
+
+-------------
