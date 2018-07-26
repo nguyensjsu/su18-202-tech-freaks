@@ -108,3 +108,60 @@
 - What tasks are blocked waiting on another team member?
 > Once I get api or method to get card and order information I will update payment method to use those information.
 -------------
+**Jul 23nd**
+- What tasks did I work on / complete?
+> Tried to solve connection error while connecting to AWS RDS db.
+> Resolved merge conflict in the controller class and merged my branch with the master.
+> Added new api for getting payment details using ID.
+
+- What am I planning to work on next?
+> Merge the controller class code to get card id and order details to make payment.
+> Prepare wireframes for payment details using Balamiq tool.
+- What tasks are blocked waiting on another team member?
+> Card details and order details needed to complete payment process.
+-------------
+## XP Core Values
+> We as a team decided to incorporate values of extreme programming as much as possible while developing our team project.
+### Simplicity
+
+> We decided to keep our project as simple as possible considering the time limit we have.
+
+> We thought of starting with the base functionality that is expected in the team project.Since we did our individual project we were familer with the starbucks business logic part, so we decided to take up that as a our first task and then move to the functionalities for extra credit.
+
+> We started taking step by step development. I was assigned to implement payment API, and I started with building a Model class for Payments and then built classes upon that.
+   
+> Once I had business logic part ready, I made it as jar file and used it in the rest API handler methods.
+
+ 
+### Communication
+
+> Since my team members are in different places, and one member will be out country, we decided to meet using zoom conferences for scrum meetings and also to discuss about our tasks.
+
+> Other than Zoom calls we also had quick meetings after the classes to discuss about the issues and tried to resolve it.
+
+> We maintained git project track board to track our todo tasks , in progress task and the completed tasks.
+
+> Git project track board helped me to report the issues I faced and let the team member know the issue I am stuck with.
+
+
+### Courage
+
+> We were new to REST API based programming and decided to help each other and get the project done.
+
+> We were transparent on our work and issues, so that all have an idea what is happening over all as a team.
+
+> We had only 2 weeks of time to design and implement our project and we decided to give our best on this project and adopt to the situation and make changes to the plan according the situation.
+
+### Respect
+
+> We respected all team members opinion on how to proceed in the project.
+
+> Each one had their own level of expertise, we are helping each other to solve the issues and get the development going. 
+
+### Feedback
+
+> I pushed to git our working code base to our branch in git.
+
+>  Then raised pull request to merge to master, so that other team members gives feedback on my code and merge the code to master.
+
+----

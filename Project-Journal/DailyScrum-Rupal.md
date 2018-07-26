@@ -7,20 +7,17 @@
 ## Daily Scrum Report
 
 **Jul 17th**
-<<<<<<< HEAD
-=======
 - First Meeting (17 Jul 2018)
-- We discussed our current capacity and decided to split the API to one team member each.
-- I brushed my java skills by going through youtube videos on how to create maven project,using git, using PostMan for REST API.
-- I also downloaded starbucks app to get a deeper understanding.
-- I also created task for my part and mentioned in To_Do
-- I also created rough Google sheets for monitoring the hours spent.
->>>>>>> b15f4d5fc4800d27b0ac735bd854308951161c96
+>We discussed our current capacity and decided to split the API to one team member each.
+>I brushed my java skills by going through youtube videos on how to create maven project,using git, using PostMan for REST API.
+> I also downloaded starbucks app to get a deeper understanding.
+> I also created task for my part and mentioned in To_Do
+>I also created rough Google sheets for monitoring the hours spent.
 
 - What tasks did I work on / complete?
 
 > As per the discussion with team I was assigned with user authentication Api to work on.
-> Completed setting up the environment like Intelij and mysql as local DB.
+> Completed setting up the environment like Intelij and mysql as cloud DB.
 > Created a maven project structure to implement business logic.
 > Started filling the Excel sheet to track the work done.
 
@@ -32,14 +29,11 @@
 
 - What tasks are blocked waiting on another team member?
 
- > No blockage for me for my next tasks.
+ >Inexperience in Java, version control management has made the learning curve steep.
 -------------
 **Jul 18th**
-<<<<<<< HEAD
-=======
 - Meeting (19 Jul 2018)
 - Discussed the class names and the methods to implement and validate for all 4 API
->>>>>>> b15f4d5fc4800d27b0ac735bd854308951161c96
 
 - What tasks did I work on / complete?
 
@@ -54,11 +48,12 @@
 
 - What tasks are blocked waiting on another team member?
 
-> No blockage for my next tasks.
+> Many of us were new to agile devlopment process this has result in slow first few days, however the team has gained speed once the agile devlopment process was clear
 
 -------------
 
 **Jul 19th**
+
 
 - What tasks did I work on / complete?
 
@@ -77,11 +72,8 @@
 -------------
 
 **Jul 20th**
-<<<<<<< HEAD
-=======
 - Meeting (20 Jul 2018)
-- Decided to create 4 different jar files to reduce dependency among others.
->>>>>>> b15f4d5fc4800d27b0ac735bd854308951161c96
+> Decided to create 4 different jar files to reduce dependency among others.
 
 - What tasks did I work on / complete?
 
@@ -101,11 +93,8 @@
 -------------
 
 **Jul 21st**
-<<<<<<< HEAD
-=======
 - Meeting (21 Jul 2018)
-- Team mutually decided to create one jar instead of 4 different jar files for smoth implementation.
->>>>>>> b15f4d5fc4800d27b0ac735bd854308951161c96
+>Team mutually decided to create one jar instead of 4 different jar files for smoth implementation.
 
 - What tasks did I work on / complete?
 
@@ -123,15 +112,71 @@
 -------------
 
 **Jul 22nd**
-<<<<<<< HEAD
-=======
 
 - Meeting (22 Jul 2018)
-- Discussed Status updates of individual team members.
-- Decided to create a single controller class instead of 4 controller class.
+> Discussed Status updates of individual team members.
+>Decided to create a single controller class instead of 4 controller class.
 
->>>>>>> b15f4d5fc4800d27b0ac735bd854308951161c96
 - What tasks did I work on / complete?
+
+>Implemented REST API for new user account creation and login succesfully using Postman.
+
 - What am I planning to work on next?
+
+>Test the API.
+>Create jar
+>Merge the controller class with the other API of team members.
+
 - What tasks are blocked waiting on another team member?
+
+> No blockage for my next tasks.
 -------------
+
+**Jul 23nd**
+
+- What tasks did I work on / complete?
+
+>Created jar file and tested the REGISTER API and LOGIN API
+
+- What am I planning to work on next?
+>Import the project to SPRING BOOT STS
+>Test the API.
+>Create GET API for getting user details of user
+>Create POST API to update the user details
+
+- What tasks are blocked waiting on another team member?
+
+> Failed to connect to the common newly created team database due to firewall issues
+
+-------------
+
+**Jul 24nd**
+
+
+- What tasks did I work on / complete?
+>Create GET API for getting user details of user.
+>Create POST API to update the user details.
+>Tested all the API.
+
+- What am I planning to work on next?
+>Convert jar into library
+>Import jar into Spring boot STS
+
+
+- What tasks are blocked waiting on another team member?
+
+> No blockage for my next tasks.
+
+-------------
+
+**Jul 25nd**
+
+
+- What tasks did I work on / complete?
+
+
+- What am I planning to work on next?
+
+- What tasks are blocked waiting on another team member?
+
+

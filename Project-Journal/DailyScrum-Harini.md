@@ -121,6 +121,7 @@
 
 - What tasks are blocked waiting on another team member?
 > Eclipse dynamic web application required lots of dependencies. So switched to SpringBoot for the controller program.
+> M 
 
 ----
 
@@ -128,15 +129,37 @@
 **Jul 23rd**
 
 - What tasks did I work on / complete?
-
+> Modified the database credentials with AWS RDS credentails 
+> Implement 5 REST APIs and tested using Advance Chrome REST API.
+> Started User Interface with basic Android simulator.
 
 - What am I planning to work on next?
+> Complete the userinterface with buttons and list view.
+> Call the REST API and integrate the UI view with controller 
+> Test the AddCard functionality flow
 
 
 - What tasks are blocked waiting on another team member?
-
+> Had MySQL JDBC connector issue. Resolved by upgrading to JRE 9.0 version and add the JAR file to classpath
 
 ----
+
+**Jul 24th**
+- What tasks did I work on / complete?
+> Created android application basic setup.
+> Designed the customized navigation bar and action bar.
+> Resolved teammate's issue and supported another teammate to connect STS controller to the AWS RDS.
+
+- What am I planning to work on next?
+> Design MyCards page and AddCard page.
+> Integrate UI with REST API.
+
+- What tasks are blocked waiting on another team member?
+> Need to work on EC2 deployment which can be done only if all the REST APIs are added and tested. 
+> Waiting for User authntication API and Order API.
+
+----
+
 ## XP Core Values
 
 ### Communication

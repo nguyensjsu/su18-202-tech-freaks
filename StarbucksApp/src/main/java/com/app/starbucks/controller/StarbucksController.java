@@ -1,6 +1,7 @@
 package com.app.starbucks.controller;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -13,7 +14,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import starbucks.*;
+
+import com.starbucks.controller.IOrderAndItem;
+import com.starbucks.controller.OrderAndItemManager;
 import com.starbucks.library.*;
+import com.starbucks.model.ItemInfo;
+import com.starbucks.model.OrderResponse;
+import com.starbucks.model.OrderedItemsInfo;
+
 import java.sql.Connection;
 
 @RestController
@@ -24,14 +32,19 @@ public class StarbucksController {
 	// Author - Harini Balakrishnan
 	// Database credentials and initialize classes from AddCard JAR file
 	com.starbucks.library.MySqlConnection mysql = new com.starbucks.library.MySqlConnection();
-	String url = ""; // Enter the AWS RDS endpoint here
-	String username = ""; // Enter the AWS RDS username here
-	String password = ""; // Enter the AWS RDS password here
+	String url = "jdbc:mysql://dbinstancestarbucks.cdw04dgws34h.us-west-1.rds.amazonaws.com:3306/dbstarbucks"; // Enter the AWS RDS endpoint here
+	String username = "root"; // Enter the AWS RDS username here
+	String password = "techfreaks"; // Enter the AWS RDS password here
 	Connection connection = mysql.getConnection(url, username, password);
 	com.starbucks.library.MyCards mycards = new com.starbucks.library.MyCards();
 	com.starbucks.library.AddCard addcard = new com.starbucks.library.AddCard();
 	com.starbucks.library.Card card = new com.starbucks.library.Card();
 	starbucks.ConnectionManager con = new starbucks.ConnectionManager(url, username, password);
+	
+	
+	OrderResponse orderDetails=new OrderResponse();
+	IOrderAndItem orderInfo=new OrderAndItemManager();
+
 			
 	@RequestMapping("/")
 	public String home() {
@@ -68,8 +81,6 @@ public class StarbucksController {
 	 public  starbucks.Payment getPayment(@PathVariable int id){
 	   return (mp.getPayment(id));
 	  } 
-	
-	
 	
 
 	// AddCard API - Harini Balakrishnan
@@ -108,5 +119,68 @@ public class StarbucksController {
 	public boolean deleteCard(@PathVariable String cardID) {
 		return mycards.deleteCard(cardID);
 	}
+	
+
+/*
+	 * @Ravali 
+	 * Managed Order API - to get Menu Items
+	 */
+	
+
+	@GetMapping("/getMenuItems")
+	public ArrayList<ItemInfo> getAllItems() {
+		orderInfo.setConnectionInfo(url,username,password);		
+		//List of Items.
+		ArrayList<ItemInfo> items=orderInfo.getMenuItems();
+		return items;		
+	}	
+	
+	/*
+	 * @Ravali 
+	 * Managed Order API - to place order
+	 */
+	String cardID = card.getCardID();
+	@GetMapping(path = "/placeOrder/{cardID}/{items}")
+	public boolean placeOrder(@PathVariable String cardID, @PathVariable String items) 
+	{
+		orderInfo.setConnectionInfo(url,username,password);	
+		ArrayList<String> itemListOrdered=new ArrayList<String>();
+		itemListOrdered.addAll(Arrays.asList(items.split(",")));
+
+		int temp=orderInfo.placeOrder(itemListOrdered, cardID);
+		orderDetails.setOrderNumber(Integer.toString(temp));
+		if (temp!=0)
+				return true;
+		else
+			return false;
+	}
+	
+	/*
+	 * @Ravali 
+	 * Managed Order API - to get Order
+	 */
+	
+	@GetMapping(path = "/getOrder/{orderNumber}")
+	public OrderedItemsInfo getOrder(@PathVariable int orderNumber) 
+	{
+		orderInfo.setConnectionInfo(url,username,password);	
+		OrderedItemsInfo itemsInfo=orderInfo.getOrderDetails(orderNumber);
+		orderDetails.setTotalPrice(itemsInfo.getTotalPrice().doubleValue());
+		return itemsInfo;
+		
+	} 
+	
+	/*
+	 * @Ravali 
+	 * Managed Order API - to cancel order
+	 */
+	@GetMapping(path = "/cancelOrder/{orderNumber}")
+	public Boolean cancelOrder(@PathVariable int orderNumber) 
+	{
+		orderInfo.setConnectionInfo(url,username,password);	
+		return orderInfo.cancelOrder(orderNumber);
+		
+	} 
+
 
 }

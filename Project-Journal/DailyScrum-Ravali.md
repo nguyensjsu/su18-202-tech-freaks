@@ -87,7 +87,7 @@
 
 - What tasks did I work on / complete?
 
-> Created MyOrder class and implemented a method to display all the order details from the ORDER table
+> Created MyOrder class and implemented a method to display all the order details from the ORDER table. We also had a video call to discuss regarding merging our jar files and implementing the RESTful services.
 
 - What am I planning to work on next?
 
@@ -103,15 +103,30 @@
 
 - What tasks did I work on / complete?
 
->
+> Implemented Test cases, exported the business logic as a JAR.
 
 - What am I planning to work on next?
 
->
+> Test the API using Advanced Rest Client.
 
 - What tasks are blocked waiting on another team member?
 
-> 
+> Issues in Controller class while testing my API.
+
 -------------
 
+**Jul 24th**
 
+- What tasks did I work on / complete?
+
+> Tested the API using Advanced Rest Client.
+
+- What am I planning to work on next?
+
+> Need to work on remaining wireframes.
+
+- What tasks are blocked waiting on another team member?
+
+> Had MySQL connector issue. Upgraded JRE to version 10 and added JAR file to the buildpath.
+
+-------------

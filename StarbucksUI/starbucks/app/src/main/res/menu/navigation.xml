@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_mycards"
+        android:enabled="true"
+        android:icon="@drawable/ic_mycards"
+        app:showAsAction="ifRoom"
+        android:title="MyCards"/>
+
+    <item
+        android:id="@+id/navigation_menu"
+        android:enabled="true"
+        android:icon="@drawable/ic_menu"
+        android:title="Menu"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/navigation_payment"
+        android:enabled="true"
+        android:icon="@drawable/ic_payment"
+        app:showAsAction="ifRoom"
+        android:title="Payment"/>
+
+
+    <item
+        android:id="@+id/navigation_user"
+        android:enabled="true"
+        android:icon="@drawable/ic_user"
+        app:showAsAction="ifRoom"
+        android:title="User"/>
+
+
+    <item
+        android:id="@+id/navigation_settings"
+        android:enabled="true"
+        android:icon="@drawable/ic_settings"
+        app:showAsAction="ifRoom"
+        android:title="Settings"/>
+</menu>

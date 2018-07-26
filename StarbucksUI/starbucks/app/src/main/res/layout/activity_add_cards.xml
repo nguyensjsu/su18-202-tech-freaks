@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?android:attr/windowBackground"
+        android:layout_gravity="bottom"
+        app:itemBackground="@color/StarbucksDarkGreen"
+        app:itemIconTint="@color/White"
+        app:itemTextColor="@color/AntiqueWhite"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:menu="@menu/navigation" />
+
+    <ImageView
+        android:id="@+id/addCardView"
+        android:layout_width="282dp"
+        android:layout_height="206dp"
+        android:layout_marginEnd="39dp"
+        android:layout_marginStart="39dp"
+        android:layout_marginTop="45dp"
+        android:contentDescription="@string/todo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/starbucks_add_card_page" />
+
+    <Button
+        android:id="@+id/cancelButton"
+        style="@android:style/Widget.Button.Inset"
+        android:layout_width="108dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="49dp"
+        android:layout_marginStart="39dp"
+        android:drawableStart="@android:drawable/ic_delete"
+        android:text="@string/cancel"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/navigation"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/confrimButton"
+        style="@android:style/Widget.Button.Inset"
+        android:layout_width="117dp"
+        android:layout_height="52dp"
+        android:layout_marginBottom="49dp"
+        android:layout_marginEnd="39dp"
+        android:drawableStart="@android:drawable/ic_input_add"
+        android:text="@string/confirm"
+        app:layout_constraintBottom_toTopOf="@+id/navigation"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <CheckBox
+        android:id="@+id/activeCheckBox"
+        android:layout_width="192dp"
+        android:layout_height="26dp"
+        android:layout_marginBottom="46dp"
+        android:layout_marginEnd="84dp"
+        android:text="@string/set_as_active_card"
+        android:textSize="18sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toTopOf="@+id/confrimButton"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <EditText
+        android:id="@+id/cardIdEditText"
+        android:layout_width="220dp"
+        android:layout_height="32dp"
+        android:layout_marginEnd="290dp"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="210dp"
+        android:background="@android:color/background_light"
+        android:ems="10"
+        android:fadingEdge="horizontal"
+        android:hint="@string/enter_starbucks_card_number"
+        android:inputType="number"
+        android:radius="15dp"
+        android:textSize="12sp"
+        android:typeface="normal"
+        app:layout_constraintBottom_toTopOf="@+id/addCardView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.526"
+        app:layout_constraintStart_toEndOf="@+id/addCardView"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/cardCodeEditText"
+        android:layout_width="106dp"
+        android:layout_height="34dp"
+        android:layout_marginBottom="58dp"
+        android:layout_marginEnd="61dp"
+        android:layout_marginStart="440dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/White"
+        android:ems="10"
+        android:hint="@string/_3_digit_code"
+        android:inputType="numberPassword"
+        android:textAlignment="textStart"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/addCardView"
+        app:layout_constraintEnd_toStartOf="@+id/addCardView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardIdEditText"
+        app:layout_constraintVertical_bias="0.0" />
+
+</android.support.constraint.ConstraintLayout>

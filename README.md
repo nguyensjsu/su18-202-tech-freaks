@@ -57,6 +57,13 @@
 
 ### Manage Orders API
 ### Payment API
+**By Supreetha Ganapathi**
+
+- Create a jar file with business logic to implement Paying for the order functionality.
+- Provide REST end points to make paymenta and get all payment details using the busniss logic jar file.
+- Design payment screen and payment details screen wireframe.
+- Design and impliment mobile front end part in android for payment functionality.
+
 ### User Authentication
 
 **By Rupal Martin**
@@ -72,7 +79,7 @@
 ----
 
 ## Architecture Diagram
-
+![alt text](https://github.com/nguyensjsu/su18-202-tech-freaks/blob/master/Architecure-Diagrams/Deployment%20Architecure.png)
 
 ----
 ## Tools

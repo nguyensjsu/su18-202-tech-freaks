@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?android:attr/windowBackground"
+        android:layout_gravity="bottom"
+        app:itemBackground="@color/StarbucksDarkGreen"
+        app:itemIconTint="@color/White"
+        app:itemTextColor="@color/AntiqueWhite"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:menu="@menu/navigation" />
+
+
+    <ImageView
+        android:id="@+id/cardView"
+        android:layout_width="303dp"
+        android:layout_height="195dp"
+        android:layout_marginBottom="12dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginStart="29dp"
+        android:contentDescription="@string/todo"
+        app:layout_constraintBottom_toTopOf="@+id/cardNumberText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/starbucks_card"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/checkoutButton"
+        android:layout_width="165dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="12dp"
+        android:layout_marginEnd="90dp"
+        android:layout_marginStart="90dp"
+        android:background="@color/Yellow"
+        android:drawableStart="@drawable/ic_cart"
+        android:text="@string/checkout"
+        android:textAlignment="center"
+        android:textColor="@color/StarbucksDarkGreen"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/navigation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="@string/Checkout" />
+
+    <Button
+        android:id="@+id/addCardButton"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="28dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/Chocolate"
+        android:drawableStart="@drawable/ic_add"
+        android:text="@string/add_card"
+        android:textAlignment="center"
+        android:textColor="@color/White"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/cardBalanceText"
+        android:layout_width="159dp"
+        android:layout_height="34dp"
+        android:layout_marginBottom="1dp"
+        android:layout_marginEnd="93dp"
+        android:text="@string/current_balance"
+        android:textAlignment="center"
+        android:textColor="@color/Black"
+        android:textSize="18sp"
+        android:textStyle="bold|italic"
+        android:typeface="serif"
+        app:layout_constraintBottom_toTopOf="@+id/textView2"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="94dp"
+        android:layout_height="26dp"
+        android:layout_marginBottom="22dp"
+        android:layout_marginStart="95dp"
+        android:text="@string/as_of_today_at"
+        android:textColor="@color/Black"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/checkoutButton"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/currentTimeText"
+        android:layout_width="76dp"
+        android:layout_height="24dp"
+        android:layout_marginBottom="22dp"
+        android:layout_marginEnd="95dp"
+        android:text="@string/_10_30_am"
+        android:textColor="@color/Black"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/checkoutButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView2" />
+
+    <TextView
+        android:id="@+id/cardNumberText"
+        android:layout_width="164dp"
+        android:layout_height="18dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="98dp"
+        android:layout_marginStart="98dp"
+        android:text="@string/card_number"
+        android:textAlignment="center"
+        android:textColor="@color/DarkSlateGray"
+        app:layout_constraintBottom_toTopOf="@+id/cardBalanceText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/allCardsButton"
+        android:layout_width="138dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@android:color/holo_green_dark"
+        android:drawableStart="?android:attr/actionModeFindDrawable"
+        android:text="@string/all_cards"
+        android:textColor="@color/WhiteSmoke"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</android.support.constraint.ConstraintLayout>
