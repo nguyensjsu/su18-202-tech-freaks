@@ -4,6 +4,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -13,6 +17,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
+
 import starbucks.*;
 
 import com.starbucks.controller.IOrderAndItem;
@@ -41,6 +47,8 @@ public class StarbucksController {
 	com.starbucks.library.Card card = new com.starbucks.library.Card();
 	starbucks.ConnectionManager con = new starbucks.ConnectionManager(url, username, password);
 	
+	//@Supreetha . TO call Rest api end points.
+	RestTemplate restTemplate = new RestTemplate();
 	
 	OrderResponse orderDetails=new OrderResponse();
 	IOrderAndItem orderInfo=new OrderAndItemManager();
@@ -57,11 +65,38 @@ public class StarbucksController {
 	 * @Supreetha for saving payment details to DB.
 	 */
 	@PostMapping("/MakePayment")
-	public void makePayment() {
-		mp.makePayment("116", "128", 5.00, 20.00);
+	public boolean makePayment() {
+		String cardNo = getCardID();
+		double currentBal = card.getCardBalance();
+		if (currentBal > orderDetails.getTotalPrice()) {
+			double newBalance = currentBal - orderDetails.getTotalPrice();
+			mp.makePayment(getCardID(), orderDetails.getOrderNumber(), orderDetails.getTotalPrice(), newBalance);
+			card.setCardBalance(newBalance);
+			HttpHeaders headers = new HttpHeaders();
+			headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
+			headers.setContentType(MediaType.APPLICATION_JSON);
+			HttpEntity<Card> request = new HttpEntity<Card>(card, headers);
+			String url = "http://localhost:8080/update/" + card.getCardID();
+
+			// Calling rest api to update card balance.
+			restTemplate.exchange(url, HttpMethod.PUT, request, Void.class);
+
+			return true;
+
+		} else {
+			return false;
+		}
 
 	}
+	/*
+	 * @Supreetha for calling REST API for getting card id.
+	 */
+	private String getCardID() {
+		card= restTemplate.getForObject("http://localhost:8080/mycards/active" , Card.class);
+		return card.getCardID();
+	}
 
+	
 	
 	
 	/*
