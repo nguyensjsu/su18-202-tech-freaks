@@ -25,6 +25,7 @@ import com.starbucks.controller.IOrderAndItem;
 import com.starbucks.controller.OrderAndItemManager;
 import com.starbucks.library.*;
 import com.starbucks.model.ItemInfo;
+import com.starbucks.model.OrderInfo;
 import com.starbucks.model.OrderResponse;
 import com.starbucks.model.OrderedItemsInfo;
 
@@ -38,21 +39,22 @@ public class StarbucksController {
 	// Author - Harini Balakrishnan
 	// Database credentials and initialize classes from AddCard JAR file
 	com.starbucks.library.MySqlConnection mysql = new com.starbucks.library.MySqlConnection();
-	String url = "jdbc:mysql://dbinstancestarbucks.cdw04dgws34h.us-west-1.rds.amazonaws.com:3306/dbstarbucks"; // Enter the AWS RDS endpoint here
-	String username = "root"; // Enter the AWS RDS username here
-	String password = "techfreaks"; // Enter the AWS RDS password here
+	String url = ""; // Enter the AWS RDS endpoint here
+	String username = ""; // Enter the AWS RDS username here
+	String password = ""; // Enter the AWS RDS password here
 	Connection connection = mysql.getConnection(url, username, password);
 	com.starbucks.library.MyCards mycards = new com.starbucks.library.MyCards();
 	com.starbucks.library.AddCard addcard = new com.starbucks.library.AddCard();
 	com.starbucks.library.Card card = new com.starbucks.library.Card();
 	starbucks.ConnectionManager con = new starbucks.ConnectionManager(url, username, password);
 	
-	//@Supreetha . TO call Rest api end points.
+	//@Supreetha. TO call Rest api end points.
 	RestTemplate restTemplate = new RestTemplate();
 	
 	OrderResponse orderDetails=new OrderResponse();
 	IOrderAndItem orderInfo=new OrderAndItemManager();
 
+	
 			
 	@RequestMapping("/")
 	public String home() {
@@ -71,16 +73,17 @@ public class StarbucksController {
 		if (currentBal > orderDetails.getTotalPrice()) {
 			double newBalance = currentBal - orderDetails.getTotalPrice();
 			mp.makePayment(getCardID(), orderDetails.getOrderNumber(), orderDetails.getTotalPrice(), newBalance);
-			card.setCardBalance(newBalance);
-			HttpHeaders headers = new HttpHeaders();
-			headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
-			headers.setContentType(MediaType.APPLICATION_JSON);
-			HttpEntity<Card> request = new HttpEntity<Card>(card, headers);
-			String url = "http://localhost:8080/update/" + card.getCardID();
+			mycards.updateCardBalance(getCardID(), newBalance);
+//			card.setCardBalance(newBalance);
+//			HttpHeaders headers = new HttpHeaders();
+//			headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
+//			headers.setContentType(MediaType.APPLICATION_JSON);
+//			HttpEntity<Card> request = new HttpEntity<Card>(card, headers);
+//			String url = "http://localhost:8080/update/" + card.getCardID();
 
 			// Calling rest api to update card balance.
-			restTemplate.exchange(url, HttpMethod.PUT, request, Void.class);
-
+//			restTemplate.exchange(url, HttpMethod.PUT, request, Void.class);
+           
 			return true;
 
 		} else {
@@ -91,10 +94,10 @@ public class StarbucksController {
 	/*
 	 * @Supreetha for calling REST API for getting card id.
 	 */
-	private String getCardID() {
+	/*private String getCardID() {
 		card= restTemplate.getForObject("http://localhost:8080/mycards/active" , Card.class);
 		return card.getCardID();
-	}
+	}*/
 
 	
 	
@@ -170,24 +173,33 @@ public class StarbucksController {
 		return items;		
 	}	
 	
+	private String getCardID() {
+		card = mycards.getActiveCard();
+			return card.getCardID();
+		}
+	
 	/*
 	 * @Ravali 
 	 * Managed Order API - to place order
 	 */
-	String cardID = card.getCardID();
-	@PostMapping(path = "/placeOrder/{cardID}/{items}")
-	public boolean placeOrder(@PathVariable String cardID, @PathVariable String items) 
+
+	//String cardID = card.getCardID();
+	@PostMapping(path = "/placeOrder", consumes = "application/json")
+	public boolean placeOrder(@RequestBody OrderInfo orderRequest) 
 	{
 		orderInfo.setConnectionInfo(url,username,password);	
 		ArrayList<String> itemListOrdered=new ArrayList<String>();
-		itemListOrdered.addAll(Arrays.asList(items.split(",")));
+		itemListOrdered.addAll(Arrays.asList(orderRequest.getItemList().split(",")));
+		//int temp=orderInfo.placeOrder(itemListOrdered, orderRequest.getCardId());
+		String cardId = getCardID();
+		orderRequest.setCardId(cardId);		
+		int temp=orderInfo.placeOrder(itemListOrdered, getCardID());
 
-		int temp=orderInfo.placeOrder(itemListOrdered, cardID);
 		orderDetails.setOrderNumber(Integer.toString(temp));
 		if (temp!=0)
 				return true;
 		else
-			return false;
+				return false;
 	}
 	
 	/*
@@ -209,7 +221,8 @@ public class StarbucksController {
 	 * @Ravali 
 	 * Managed Order API - to cancel order
 	 */
-	@PostMapping(path = "/cancelOrder/{orderNumber}")
+
+	@DeleteMapping(path = "/cancelOrder/{orderNumber}")
 	public Boolean cancelOrder(@PathVariable int orderNumber) 
 	{
 		orderInfo.setConnectionInfo(url,username,password);	

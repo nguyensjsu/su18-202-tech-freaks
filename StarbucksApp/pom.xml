@@ -43,6 +43,14 @@
             <scope>system</scope>
             <systemPath>${basedir}/lib/starbucks.jar</systemPath>
        </dependency>
+       
+       <dependency>
+			<groupId>com.app</groupId>
+            <artifactId>starbucks_order</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${basedir}/lib/starbucks-manage-order.jar</systemPath>
+       </dependency>
        <dependency>
 			<groupId>com.app</groupId>
             <artifactId>starbucks_addcard</artifactId>
