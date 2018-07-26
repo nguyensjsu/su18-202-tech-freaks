@@ -33,8 +33,7 @@ import java.sql.Connection;
 
 @RestController
 public class StarbucksController {
-	//user authentication by Rupal
-	com.app.ManageUsers manageUsers = new com.app.ManageUsers();
+
 
 	starbucks.ManagePayments mp = new starbucks.ManagePayments();
 	List<starbucks.Payment> paymentsList = new ArrayList<>();
@@ -51,6 +50,10 @@ public class StarbucksController {
 	com.starbucks.library.AddCard addcard = new com.starbucks.library.AddCard();
 	com.starbucks.library.Card card = new com.starbucks.library.Card();
 	starbucks.ConnectionManager con = new starbucks.ConnectionManager(url, username, password);
+
+    //user authentication by Rupal
+    com.app.ConnectionManager conectionmanager = new com.app.ConnectionManager(url, username, password);
+    com.app.ManageUsers manageUsers = new com.app.ManageUsers();
 	
 	//@Supreetha. TO call Rest api end points.
 	RestTemplate restTemplate = new RestTemplate();
