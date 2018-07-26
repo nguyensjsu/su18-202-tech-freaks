@@ -248,8 +248,9 @@ public class StarbucksController {
      * @Rupal
      * @rupalmartin for register users .
      */
-    @PostMapping("/register")
-    public boolean registerUser(@RequestBody com.app.User user) {
+    @PostMapping(path = "register", consumes = "application/json")
+    public boolean register(@RequestBody com.app.User user) {
+    	System.out.println(user.getUsername());
         return (manageUsers.registerUser(user.getUsername(), user.getPassword(), user.getEmail()));
     }
 
@@ -277,7 +278,7 @@ public class StarbucksController {
      * @Rupal
      * @rupalmartin for retrieving  all users details from DB.
      */
-    @GetMapping("/users")
+    @GetMapping(path = "/users")
     public ArrayList<com.app.User> getAllUser() {
         return (manageUsers.getAllUser());
     }
