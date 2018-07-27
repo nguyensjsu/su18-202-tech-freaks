@@ -70,8 +70,8 @@
 
 - Create necessary classes in the library and followed test-driven development
 - Implement REST API to perform GET, POST actions necessary for the project.
-- Wire-frame the UI for the Create Account and Login screens.
-- Design the Android UI for My Part.
+- Wire-frame the UI for the Create Account and Login screens and update password Acreens.
+
 
 ### User Interface
 ### Cloud Deployment
