@@ -146,3 +146,19 @@
 > Need to explore Volley Library for Android to implement REST services in Android App.
 
 -------------
+
+**Jul 26th**
+
+- What tasks did I work on / complete?
+
+> Worked on UI part and finished Android app for Order API part.
+
+- What am I planning to work on next?
+
+> Need to test the whole workflow and get ready for demo.
+
+- What tasks are blocked waiting on another team member?
+
+> Waiting for others to complete the UI part and test the whole workflow.
+
+-------------
