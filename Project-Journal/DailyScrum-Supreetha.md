@@ -120,6 +120,18 @@
 - What tasks are blocked waiting on another team member?
 > Card details and order details needed to complete payment process.
 -------------
+**Jul 24th**
+- What tasks did I work on / complete?
+> Merged the controller codes but getting merge conflicts.
+> Made changed to call addcard api and order api.
+> Added new api for getting payment details using ID.
+
+- What am I planning to work on next?
+> Merge the controller class code to get card id and order details to make payment.
+> Prepare wireframes for payment details using Balamiq tool.
+- What tasks are blocked waiting on another team member?
+> Need to figure our how to set the url inside the url for rest end pints calls to other apis.
+-------------
 ## XP Core Values
 > We as a team decided to incorporate values of extreme programming as much as possible while developing our team project.
 ### Simplicity
