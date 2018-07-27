@@ -43,6 +43,14 @@
             <scope>system</scope>
             <systemPath>${basedir}/lib/starbucks.jar</systemPath>
        </dependency>
+       
+       <dependency>
+			<groupId>com.app</groupId>
+            <artifactId>starbucks_order</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${basedir}/lib/starbucks-manage-order.jar</systemPath>
+       </dependency>
        <dependency>
 			<groupId>com.app</groupId>
             <artifactId>starbucks_addcard</artifactId>
@@ -50,7 +58,14 @@
             <scope>system</scope>
             <systemPath>${basedir}/lib/starbucks_addcard.jar</systemPath>
        </dependency>
-       
+		<dependency>
+			<groupId>com.app</groupId>
+			<artifactId>starbucksuser</artifactId>
+			<version>1.0</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/lib/starbucksuser.jar</systemPath>
+		</dependency>
+
 	<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
 	<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
 	<dependency>
