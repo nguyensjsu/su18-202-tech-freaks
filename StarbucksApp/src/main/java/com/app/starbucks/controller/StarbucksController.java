@@ -74,13 +74,14 @@ public class StarbucksController {
 	 * @Supreetha for saving payment details to DB.
 	 */
 	@PostMapping("/MakePayment")
-	public boolean makePayment() {
+	public Payment makePayment() {
 		String cardNo = getCardID();
 		double currentBal = card.getCardBalance();
 		if (currentBal > orderDetails.getTotalPrice()) {
 			double newBalance = currentBal - orderDetails.getTotalPrice();
-			mp.makePayment(getCardID(), orderDetails.getOrderNumber(), orderDetails.getTotalPrice(), newBalance);
+			Payment payment=mp.makePayment(getCardID(), orderDetails.getOrderNumber(), orderDetails.getTotalPrice(), newBalance);
 			mycards.updateCardBalance(getCardID(), newBalance);
+			
 //			card.setCardBalance(newBalance);
 //			HttpHeaders headers = new HttpHeaders();
 //			headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
@@ -91,10 +92,10 @@ public class StarbucksController {
 			// Calling rest api to update card balance.
 //			restTemplate.exchange(url, HttpMethod.PUT, request, Void.class);
            
-			return true;
+			return payment;
 
 		} else {
-			return false;
+			return null;
 		}
 
 	}
@@ -126,6 +127,15 @@ public class StarbucksController {
 	 public  starbucks.Payment getPayment(@PathVariable int id){
 	   return (mp.getPayment(id));
 	  } 
+	
+	 /*
+	 * @Supreetha for retrieving latest payment details from DB.
+	 */
+	 @GetMapping("/getLatestPayment")
+	 public  starbucks.Payment getLatestPayment(){
+	   return (mp.getLatestPayment());
+	  }
+
 	
 
 	// AddCard API - Harini Balakrishnan
