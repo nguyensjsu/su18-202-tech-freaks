@@ -56,6 +56,14 @@
 - Design the Android UI for My Part.
 
 ### Manage Orders API
+
+**By Ravali Nagabandi**
+
+- Create required classes to implement the Managed Order functionality.
+- Provide REST end points to display menu, place and order, display order details and cancel an order.
+- Design wireframes for menu and display order.
+- Design UI for this API in Android.
+
 ### Payment API
 **By Supreetha Ganapathi**
 
