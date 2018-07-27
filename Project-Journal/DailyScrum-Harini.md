@@ -173,22 +173,19 @@
   - Need to deploy the controller to AWS EC2 and get EC2 urls in the Andorid application. 
 
 ----
-**Jul 25th**
+**Jul 26th**
 
 - What tasks did I work on / complete?
-  -  Design the Settings screen and AllCards screen 
-  -  Implement Applicationpath in the controller and test REST APIs
-
-- What am I planning to work on next?
   - Deploy the controller in the EC2 instance
   - Test all REST API with EC2 url and take screenshots
+ 
+- What am I planning to work on next?
   - Integrate AWS REST API links with Andorid application 
   - Test Andorid UI function flow
 
-
 - What tasks are blocked waiting on another team member?
-  - Integrating all REST APIs by other teammates in the controller
-  - Installing the JAR file in the EC2 and establishing credentials.
+  - Installing the JAR file in the EC2 and establishing credentials. 
+  - Had Java version issues and Maven dependencies issues.
 
 ----
 
