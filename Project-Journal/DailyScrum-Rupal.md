@@ -181,19 +181,19 @@
 >Test the API
 
 - What tasks are blocked waiting on another team member?
->When merged with the team, issue with merging
+>When merged with the team, Spring boot Application gave error creating bean.
 
 -------------
 
-**Jul 25nd**
+**Jul 26nd**
 
 
 - What tasks did I work on / complete?
->
+>Commented other team members API and then tried to Rebuid,run and test my API
 
 
 - What am I planning to work on next?
->
+>Test the API
 
 - What tasks are blocked waiting on another team member?
->
+> No blockage for my next tasks.
