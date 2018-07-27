@@ -44,10 +44,10 @@ public class StarbucksController {
 	 */
 	// Database credentials and initialize classes from AddCard JAR file
 	com.starbucks.library.MySqlConnection mysql = new com.starbucks.library.MySqlConnection();
-	String url = "jdbc:mysql://starbucksinstancedb.cdw04dgws34h.us-west-1.rds.amazonaws.com:3306/starbucksdb"; // Enter the AWS RDS endpoint here
-	String username = "root"; // Enter the AWS RDS username here
-	String password = "techfreaks"; // Enter the AWS RDS password here
-    String dbname="starbucksdb";
+	String url = ""; // Enter the AWS RDS endpoint here
+	String username = ""; // Enter the AWS RDS username here
+	String password = ""; // Enter the AWS RDS password here
+    String dbname="";
 	Connection connection = mysql.getConnection(url, username, password);
 	com.starbucks.library.MyCards mycards = new com.starbucks.library.MyCards();
 	com.starbucks.library.AddCard addcard = new com.starbucks.library.AddCard();
@@ -222,8 +222,9 @@ public class StarbucksController {
     
     //String cardID = card.getCardID();
     @PostMapping(path = "/placeOrder", consumes = "application/json")
-    public boolean placeOrder(@RequestBody OrderInfo orderRequest)
-    { 
+    public String placeOrder(@RequestBody OrderInfo orderRequest)
+    {
+        
         orderInfo.setConnectionInfo(url,username,password,dbname);
         ArrayList<String> itemListOrdered=new ArrayList<String>();
         itemListOrdered.addAll(Arrays.asList(orderRequest.getItemList().split(",")));
@@ -231,12 +232,10 @@ public class StarbucksController {
         System.out.println("Item List is" + orderRequest.getItemList());
         String cardId = getCardID();
         orderRequest.setCardId(cardId);
-        int temp=orderInfo.placeOrder(itemListOrdered, cardId);         
+        int temp=orderInfo.placeOrder(itemListOrdered, orderRequest.getCardId());
         orderDetails.setOrderNumber(Integer.toString(temp));
-        if (temp!=0)
-            return true;
-        else
-            return false;
+        String jsonReturn="{\"orderNumber\":"+ temp+"}";
+        return jsonReturn;
     }
     
     /*
