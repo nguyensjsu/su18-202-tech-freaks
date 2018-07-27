@@ -32,18 +32,21 @@ import com.starbucks.model.OrderedItemsInfo;
 import java.sql.Connection;
 
 @RestController
+@RequestMapping("/api/v1/starbucks")
 public class StarbucksController {
 
 
 	starbucks.ManagePayments mp = new starbucks.ManagePayments();
 	List<starbucks.Payment> paymentsList = new ArrayList<>();
 
-	// Author - Harini Balakrishnan
+	/*
+	 * @Author - Harini Balakrishnan
+	 */
 	// Database credentials and initialize classes from AddCard JAR file
 	com.starbucks.library.MySqlConnection mysql = new com.starbucks.library.MySqlConnection();
-	String url = ""; // Enter the AWS RDS endpoint here
-	String username = ""; // Enter the AWS RDS username here
-	String password = ""; // Enter the AWS RDS password here
+	String url = "jdbc:mysql://starbucksinstancedb.cdw04dgws34h.us-west-1.rds.amazonaws.com:3306/starbucksdb"; // Enter the AWS RDS endpoint here
+	String username = "root"; // Enter the AWS RDS username here
+	String password = "techfreaks"; // Enter the AWS RDS password here
     String dbname="starbucksdb";
 	Connection connection = mysql.getConnection(url, username, password);
 	com.starbucks.library.MyCards mycards = new com.starbucks.library.MyCards();
@@ -73,14 +76,15 @@ public class StarbucksController {
 	/*
 	 * @Supreetha for saving payment details to DB.
 	 */
-	@PostMapping("/MakePayment")
-	public boolean makePayment() {
+	@PostMapping("/makepayment")
+	public Payment makePayment() {
 		String cardNo = getCardID();
 		double currentBal = card.getCardBalance();
 		if (currentBal > orderDetails.getTotalPrice()) {
 			double newBalance = currentBal - orderDetails.getTotalPrice();
-			mp.makePayment(getCardID(), orderDetails.getOrderNumber(), orderDetails.getTotalPrice(), newBalance);
+			Payment payment=mp.makePayment(getCardID(), orderDetails.getOrderNumber(), orderDetails.getTotalPrice(), newBalance);
 			mycards.updateCardBalance(getCardID(), newBalance);
+			
 //			card.setCardBalance(newBalance);
 //			HttpHeaders headers = new HttpHeaders();
 //			headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
@@ -91,10 +95,10 @@ public class StarbucksController {
 			// Calling rest api to update card balance.
 //			restTemplate.exchange(url, HttpMethod.PUT, request, Void.class);
            
-			return true;
+			return payment;
 
 		} else {
-			return false;
+			return null;
 		}
 
 	}
@@ -112,7 +116,7 @@ public class StarbucksController {
 	/*
 	 * @Supreetha for retrieving payment all payment details from DB.
 	 */
-	@GetMapping("/getPayments")
+	@GetMapping("/payments")
 	public ArrayList<starbucks.Payment> getAllPayments() {
 
 		return (mp.getAllPayments());
@@ -122,28 +126,46 @@ public class StarbucksController {
 	 * @Supreetha for retrieving payment all payment details from DB.
 	 */
 	
-	 @RequestMapping(value = "/getPayments/{id}", method = RequestMethod.GET)
+	 @RequestMapping(value = "/payments/{id}", method = RequestMethod.GET)
 	 public  starbucks.Payment getPayment(@PathVariable int id){
 	   return (mp.getPayment(id));
 	  } 
 	
+	 /*
+	 * @Supreetha for retrieving latest payment details from DB.
+	 */
+	 @GetMapping("/payment/latest")
+	 public  starbucks.Payment getLatestPayment(){
+	   return (mp.getLatestPayment());
+	  }
 
-	// AddCard API - Harini Balakrishnan
-	// GET - current active card
+	
+
+	/*
+	 *  AddCard API - Harini Balakrishnan
+	 *  GET - current active card
+	 */
+ 
 	@RequestMapping("/mycards/active")
 	public com.starbucks.library.Card getActiveCard() {
 		return mycards.getActiveCard();
 	}
 
-	// AddCard API - Harini Balakrishnan
-	// GET - all cards in the table
+	/*
+	 *  AddCard API - Harini Balakrishnan
+	 *  GET - all cards in the table
+	 */
+	 
 	@RequestMapping("/mycards/all")
 	public ArrayList<com.starbucks.library.Card> getAllCards() {
 		return mycards.getAllCards();
 	}
 
-	// AddCard API - Harini Balakrishnan
-	// POST - create a new card with JSON format user input
+	/*
+	 *  AddCard API - Harini Balakrishnan
+	 *   POST - create a new card with JSON format user input
+	 */
+	
 	@PostMapping(path = "/addcard", consumes = "application/json")
 	public void insertCard(@RequestBody com.starbucks.library.Card card) {
 		System.out.println("id: " + card.getCardID());
@@ -151,15 +173,21 @@ public class StarbucksController {
 				card.getActiveStatus());
 	}
 
-	// AddCard API - Harini Balakrishnan
-	// PUT - update the card's balance with user input
+	/*
+	 *  AddCard API - Harini Balakrishnan
+	 *   PUT - update the card's balance with user input
+	 */
+	
 	@PutMapping(path = "/update/{cardID}", consumes = "application/json")
 	public boolean updateCard(@PathVariable String cardID, @RequestBody com.starbucks.library.Card card) {
 		return mycards.updateCardBalance(cardID, card.getCardBalance());
 	}
 
-	// AddCard API - Harini Balakrishnan
-	// DELETE - delete a card from the database
+	/*
+	 * AddCard API - Harini Balakrishnan
+	 *  DELETE - delete a card from the database
+	 */
+	
 	@DeleteMapping(path = "/delete/{cardID}")
 	public boolean deleteCard(@PathVariable String cardID) {
 		return mycards.deleteCard(cardID);
@@ -181,7 +209,6 @@ public class StarbucksController {
         System.out.println("url "+url);
         System.out.println("username "+username);
         System.out.println("password "+password);
-        
         orderInfo.setConnectionInfo(url,username,password,dbname);
         //List of Items.
         ArrayList<ItemInfo> items=orderInfo.getMenuItems();
@@ -196,19 +223,15 @@ public class StarbucksController {
     //String cardID = card.getCardID();
     @PostMapping(path = "/placeOrder", consumes = "application/json")
     public boolean placeOrder(@RequestBody OrderInfo orderRequest)
-    {
-        
+    { 
         orderInfo.setConnectionInfo(url,username,password,dbname);
         ArrayList<String> itemListOrdered=new ArrayList<String>();
         itemListOrdered.addAll(Arrays.asList(orderRequest.getItemList().split(",")));
-        //int temp=orderInfo.placeOrder(itemListOrdered, orderRequest.getCardId());
         System.out.println("CardId is" + orderRequest.getCardId());
         System.out.println("Item List is" + orderRequest.getItemList());
         String cardId = getCardID();
         orderRequest.setCardId(cardId);
-        int temp=orderInfo.placeOrder(itemListOrdered, cardId);
-        //int temp=orderInfo.placeOrder(itemListOrdered, orderRequest.getCardId());
-        
+        int temp=orderInfo.placeOrder(itemListOrdered, cardId);         
         orderDetails.setOrderNumber(Integer.toString(temp));
         if (temp!=0)
             return true;
@@ -248,7 +271,7 @@ public class StarbucksController {
      * @Rupal
      * @rupalmartin for register users .
      */
-    @PostMapping(path = "register", consumes = "application/json")
+    @PostMapping(path = "/register", consumes = "application/json")
     public boolean register(@RequestBody com.app.User user) {
     	System.out.println(user.getUsername());
         return (manageUsers.registerUser(user.getUsername(), user.getPassword(), user.getEmail()));

@@ -173,6 +173,21 @@
   - Need to deploy the controller to AWS EC2 and get EC2 urls in the Andorid application. 
 
 ----
+**Jul 26th**
+
+- What tasks did I work on / complete?
+  - Deploy the controller in the EC2 instance
+  - Test all REST API with EC2 url and take screenshots
+ 
+- What am I planning to work on next?
+  - Integrate AWS REST API links with Andorid application 
+  - Test Andorid UI function flow
+
+- What tasks are blocked waiting on another team member?
+  - Installing the JAR file in the EC2 and establishing credentials. 
+  - Had Java version issues and Maven dependencies issues.
+
+----
 
 ## XP Core Values
 

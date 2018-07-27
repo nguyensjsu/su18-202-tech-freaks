@@ -11,9 +11,12 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
+import android.widget.Button;
 import android.widget.ImageButton;
 
 public class SettingsActivity extends AppCompatActivity {
+
+    Button addBtn, deleteBtn, billingBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,10 +25,41 @@ public class SettingsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
         BottomNavigationView mBottomNav = (BottomNavigationView) findViewById(R.id.navigation);
+
+        // Set the current screen as active in the bottom navigtion bar
         mBottomNav.getMenu().findItem(R.id.navigation_settings).setChecked(true);
         setNavlistener(mBottomNav);
-    }
 
+        // Initialize btutton
+        addBtn = (Button) findViewById(R.id.addCardButton);
+        deleteBtn = (Button) findViewById(R.id.deleteCardButton);
+        billingBtn = (Button) findViewById(R.id.payemtnsAllButton);
+
+
+        addBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(SettingsActivity.this, AddCardActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        deleteBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(SettingsActivity.this, AllCardsActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        billingBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+//                @ Supreetha need to add your list of all payments screen here
+            }
+        });
+
+    }
 
     private void setNavlistener(BottomNavigationView mBottomNav){
         mBottomNav.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {

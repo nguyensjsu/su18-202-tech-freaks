@@ -21,4 +21,142 @@
         app:layout_constraintRight_toRightOf="parent"
         app:menu="@menu/navigation" />
 
+    <View
+        android:id="@+id/view"
+        android:layout_width="339dp"
+        android:layout_height="358dp"
+        android:layout_marginBottom="21dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="11dp"
+        android:background="@color/Black"
+        app:layout_constraintBottom_toTopOf="@+id/navigation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="93dp"
+        android:layout_height="25dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="550dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="100dp"
+        android:text="@string/manage"
+        android:textAllCaps="true"
+        android:textColor="@color/White"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/view"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <Button
+        android:id="@+id/deleteCardButton"
+        android:layout_width="297dp"
+        android:layout_height="51dp"
+        android:layout_marginEnd="21dp"
+        android:layout_marginStart="300dp"
+        android:drawableEnd="@drawable/ic_backarrow"
+        android:text="@string/delete_starbucks_card"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/payemtnsAllButton"
+        app:layout_constraintEnd_toStartOf="@+id/view"
+        app:layout_constraintHorizontal_bias="0.441"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addCardButton" />
+
+    <Button
+        android:id="@+id/payemtnsAllButton"
+        android:layout_width="297dp"
+        android:layout_height="51dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginStart="300dp"
+        android:drawableEnd="@drawable/ic_backarrow"
+        android:text="@string/billing_information"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.899"
+        app:layout_constraintStart_toEndOf="@+id/view"
+        app:layout_constraintTop_toBottomOf="@+id/deleteCardButton" />
+
+    <Button
+        android:id="@+id/aboutButton"
+        android:layout_width="297dp"
+        android:layout_height="51dp"
+        android:layout_marginEnd="21dp"
+        android:layout_marginStart="300dp"
+        android:layout_marginTop="320dp"
+        android:drawableEnd="@drawable/ic_backarrow"
+        android:text="@string/about"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/termsButton"
+        app:layout_constraintEnd_toStartOf="@+id/view"
+        app:layout_constraintHorizontal_bias="0.441"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/termsButton"
+        android:layout_width="297dp"
+        android:layout_height="54dp"
+        android:layout_marginEnd="11dp"
+        android:layout_marginStart="300dp"
+        android:drawableEnd="@drawable/ic_backarrow"
+        android:text="@string/terms_and_conditions"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/view"
+        app:layout_constraintHorizontal_bias="0.448"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/aboutButton" />
+
+    <Button
+        android:id="@+id/addCardButton"
+        android:layout_width="297dp"
+        android:layout_height="51dp"
+        android:layout_marginEnd="21dp"
+        android:layout_marginStart="300dp"
+        android:layout_marginTop="130dp"
+        android:drawableEnd="@drawable/ic_backarrow"
+        android:text="@string/add_starbucks_card"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/deleteCardButton"
+        app:layout_constraintEnd_toStartOf="@+id/view"
+        app:layout_constraintHorizontal_bias="0.441"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="162dp"
+        android:layout_height="45dp"
+        android:layout_marginEnd="99dp"
+        android:layout_marginStart="99dp"
+        android:layout_marginTop="16dp"
+        android:drawableStart="@drawable/ic_settingcircle"
+        android:text="@string/settings"
+        android:textAlignment="center"
+        android:textColor="@color/StarbucksDarkGreen"
+        android:textSize="30sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="6dp"
+        android:layout_marginEnd="21dp"
+        android:layout_marginStart="300dp"
+        android:text="@string/application_information"
+        android:textAllCaps="true"
+        android:textColor="@color/White"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/aboutButton"
+        app:layout_constraintEnd_toStartOf="@+id/view"
+        app:layout_constraintStart_toStartOf="parent" />
+
 </android.support.constraint.ConstraintLayout>
