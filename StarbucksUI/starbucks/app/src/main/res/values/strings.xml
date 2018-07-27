@@ -22,4 +22,12 @@
     <string name="all_cards1">All Cards</string>
     <string name="user_name">User Name</string>
     <string name="view_transactions">View Transactions</string>
+    <string name="settings">Settings</string>
+    <string name="application_information">Application Information</string>
+    <string name="add_starbucks_card">Add Starbucks card</string>
+    <string name="terms_and_conditions">Terms and Conditions</string>
+    <string name="about">About</string>
+    <string name="billing_information">Billing Information</string>
+    <string name="delete_starbucks_card">Delete Starbucks Card</string>
+    <string name="manage">Manage</string>
 </resources>
