@@ -65,6 +65,13 @@
 			<scope>system</scope>
 			<systemPath>${basedir}/lib/starbucksuser.jar</systemPath>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-compiler-plugin -->
+<dependency>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-compiler-plugin</artifactId>
+    <version>3.7.0</version>
+</dependency>
+		
 
 	<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
 	<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
@@ -83,9 +90,16 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 
-			</plugin>		
-			
-	</plugins>
+			</plugin>
+
+
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.7.0</version>
+			</plugin>
+		</plugins>
 		
 	</build>
 
