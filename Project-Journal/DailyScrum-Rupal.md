@@ -173,10 +173,27 @@
 
 
 - What tasks did I work on / complete?
+>Converted jar into library
+>Import jar into Spring boot STS
 
 
 - What am I planning to work on next?
+>Test the API
 
 - What tasks are blocked waiting on another team member?
+>When merged with the team, issue with merging
+
+-------------
+
+**Jul 25nd**
 
 
+- What tasks did I work on / complete?
+>
+
+
+- What am I planning to work on next?
+>
+
+- What tasks are blocked waiting on another team member?
+>
