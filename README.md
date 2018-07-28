@@ -21,7 +21,7 @@
 ## Details
 
 |Name | Detail|Id|
-|---|---|
+|---|---|---|
 | University | [SJSU UNIVERSITY]( http://www.sjsu.edu/) |
 | Course | [CMPE 202 - Project - Team Portion](https://sjsu.instructure.com/courses/1262771/assignments/4720318)|
 |Professor| [Mr.Paul Nguyen](paul.nguyen@sjsu.edu) |
