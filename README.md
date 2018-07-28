@@ -98,11 +98,12 @@
 ![alt text](https://github.com/nguyensjsu/su18-202-tech-freaks/blob/master/Architecure-Diagrams/Deployment%20Architecure.png)
 
 ----
-## Tools
 
-- Eclipse
-- Tomcat
-- JUnit
-- Pencil/other tools
-- AWS
-- MySQL
+## Component Diagram
+![alt text](https://github.com/nguyensjsu/su18-202-tech-freaks/blob/master/Architecure-Diagrams/Component_Diagram.jpeg)
+
+----
+## Technology stack
+
+  ![alt text](https://github.com/nguyensjsu/su18-202-tech-freaks/blob/master/Architecure-Diagrams/TechnologyStack.png)
+----
