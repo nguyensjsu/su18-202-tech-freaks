@@ -20,18 +20,29 @@
 
 ## Details
 
-|Name | Detail|
+|Name | Detail|Id|
 |---|---|
 | University | [SJSU UNIVERSITY]( http://www.sjsu.edu/) |
 | Course | [CMPE 202 - Project - Team Portion](https://sjsu.instructure.com/courses/1262771/assignments/4720318)|
 |Professor| [Mr.Paul Nguyen](paul.nguyen@sjsu.edu) |
 | TEAM Name | Tech Freaks |
-|     [Harini Balakrishnan](https://www.linkedin.com/in/harini-balakrishnan/)    |  Add Card API
-|     [Supreetha Ganapathi](supreetha.ganapathi@sjsu.edu )     | Manage Orders API
-|     [Ravali Nagabandi](ravali.nagabandi@sjsu.edu )      | Payments API
-|     [Rupal Martin](rupal.martin@sjsu.edu )     |  User Authentication API
+|     [Harini Balakrishnan](https://www.linkedin.com/in/harini-balakrishnan/)  | 010830755  |  Add Card API
+|     [Supreetha Ganapathi](supreetha.ganapathi@sjsu.edu )    | 011332646| Manage Orders API
+|     [Ravali Nagabandi](ravali.nagabandi@sjsu.edu )     |011530454 | Payments API
+|     [Rupal Martin](rupal.martin@sjsu.edu )     | 012169300 |User Authentication API
 
 ----
+
+
+## Links
+[Team's GitHub Repo](https://github.com/nguyensjsu/su18-202-tech-freaks)
+
+[Team's Project Board](https://github.com/nguyensjsu/su18-202-tech-freaks/tree/master/StarbucksApp)
+
+[Project Journal](https://github.com/nguyensjsu/su18-202-tech-freaks/tree/master/Project-Journal)
+
+[Google Sprint Task Sheet](https://docs.google.com/spreadsheets/d/1DHKUhauHKrLk8ypkR21KtiweimVdh4xelrKpuAAUN80/edit#gid=0)
+
 
 ## Introduction
  - To implement a full end-to-end Starbucks order management RESTful application.
@@ -56,14 +67,6 @@
 - Design the Android UI for My Part.
 
 ### Manage Orders API
-
-**By Ravali Nagabandi**
-
-- Create required classes to implement the Managed Order functionality.
-- Provide REST end points to display menu, place and order, display order details and cancel an order.
-- Design wireframes for menu and display order.
-- Design UI for this API in Android.
-
 ### Payment API
 **By Supreetha Ganapathi**
 
@@ -75,10 +78,11 @@
 ### User Authentication
 
 **By Rupal Martin**
-
-- Create necessary classes in the library and followed test-driven development
+- Create a jar file with business logic to implement user authentication for the order functionality.
+- Provide REST end points to register the user, login, get all details of user and update the password using the business logic jar file.
 - Implement REST API to perform GET, POST actions necessary for the project.
-- Wire-frame the UI for the Create Account and Login screens and update password Acreens.
+- Create necessary classes in the library and followed test-driven development
+- Wire-frame the UI for the Create Account and Login screens and update password screens.
 
 
 ### User Interface
