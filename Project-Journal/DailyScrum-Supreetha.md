@@ -132,6 +132,52 @@
 - What tasks are blocked waiting on another team member?
 > Need to figure our how to set the url inside the url for rest end pints calls to other apis.
 -------------
+**Jul 25th**
+- What tasks did I work on / complete?
+> Merged the controller codes but getting merge conflicts.
+> Made changed to call addcard api and order api.
+> Designed wireframe for payment Screen.
+
+- What am I planning to work on next?
+> Resolve the merge conflict.
+> Design architecture diagram.
+> Design deployment architecture diagram.
+> Explore on how to deploy jar in ec2 with load balancer.
+- What tasks are blocked waiting on another team member?
+> Need to figure our how to set the url inside the url for rest end pints calls to other apis.
+> Need order screens and its flow from other team member.
+-------------
+
+-------------
+**Jul 26th**
+- What tasks did I work on / complete?
+> Merged the controller codes.
+> Created payment screen in android studio 
+> Trying to hit api using Volley library but throwing error.
+> Created jar file uploaded to ec2 instance.
+
+- What am I planning to work on next?
+> Resolve the merge conflict. 
+> Make the  android payments screen running.
+
+- What tasks are blocked waiting on another team member?
+> Resolve android errors.
+> Test the apis from the Postman.
+> Not able to run the jar file in EC2 instance.
+-------------
+
+**Jul 27th**
+- What tasks did I work on / complete?
+> Trying to run the jar file in ec2.
+
+- What am I planning to work on next?
+>Run the jar file in ec2 instance.
+
+- What tasks are blocked waiting on another team member?
+> Test all the apis.
+> Not able to run the jar file of the application in the ec2 insatnce. 
+-------------
+
 ## XP Core Values
 > We as a team decided to incorporate values of extreme programming as much as possible while developing our team project.
 ### Simplicity
