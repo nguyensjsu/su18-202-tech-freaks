@@ -30,4 +30,25 @@
     <string name="billing_information">Billing Information</string>
     <string name="delete_starbucks_card">Delete Starbucks Card</string>
     <string name="manage">Manage</string>
+
+    <string name="menu">MENU</string>
+    <string name="price">Price (in $)</string>
+    <string name="item_name">Item Name</string>
+    <string name="menuItemOne">Caffe Mocha Venti</string>
+    <string name="menuItemTwo">Caramel Frappuccino Grande</string>
+    <string name="menuItemThree">Freshly Brewed Coffee</string>
+    <string name="menuItemFour">Coffee Frappuccino</string>
+    <string name="menuItemFive">Mocha Frappuccino</string>
+    <string name="itemPriceOne">4.65</string>
+    <string name="itemPriceTwo">4.45</string>
+    <string name="itemPriceThree">1.85</string>
+    <string name="itemPriceFour">3.25</string>
+    <string name="itemPriceFive">3.95</string>
+    <string name="place_order">Place Order</string>
+    <string name="title_activity_order_details">activity_order_details</string>
+    <string name="checkout_order">Checkout</string>
+    <string name="cancel_order">Cancel Order</string>
+    <string name="make_payment">Make Payment</string>
+    <string name="total_price">Total Price</string>
+
 </resources>

@@ -38,7 +38,7 @@ public class MyCardsActivity extends AppCompatActivity{
     AlertDialog.Builder builder;
     TextView cardBalanceText, cardIDText, currentTime;
     Button addCardButton, allCardsButton;
-
+    String activeCardId;
 
     @SuppressLint("SetTextI18n")
     @Override
@@ -102,7 +102,8 @@ public class MyCardsActivity extends AppCompatActivity{
                     }
                     case R.id.navigation_menu: {
                         // Need to change the activity to menu acitivty here
-                        Intent intent = new Intent(MyCardsActivity.this, AddCardActivity.class);
+                        Intent intent = new Intent(MyCardsActivity.this, MenuActivity.class);
+                        intent.putExtra("cardId",activeCardId);
                         startActivity(intent);
                         break;
                     }
