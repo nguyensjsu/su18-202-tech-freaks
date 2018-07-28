@@ -67,6 +67,10 @@
 - Design the Android UI for My Part.
 
 ### Manage Orders API
+- Created Rest API for Manage Orders API.
+- Create necessary classes in the library
+- Created wireframe for Manage Orders API.
+
 ### Payment API
 **By Supreetha Ganapathi**
 
