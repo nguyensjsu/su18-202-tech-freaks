@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.techfreaks.starbucks.OrderDetailsActivity"
+    android:id="@+id/ordersView"
+
+    >
+
+
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_gravity="bottom"
+        android:background="?android:attr/windowBackground"
+        app:itemBackground="@color/StarbucksDarkGreen"
+        app:itemIconTint="@color/White"
+        app:itemTextColor="@color/AntiqueWhite"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:menu="@menu/navigation" />
+
+    <TextView
+        android:id="@+id/menuTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="serif-monospace"
+        android:text="@string/checkout_order"
+        android:textColor="@color/DarkGreen"
+        android:textSize="40dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/itemNameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/menuTextView"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="17dp"
+        android:fontFamily="sans-serif"
+        android:text="@string/item_name"
+        android:textColor="@color/DarkGreen"
+        android:textSize="30dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/itemPriceTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/itemNameTextView"
+        android:layout_alignBottom="@+id/itemNameTextView"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="15dp"
+        android:fontFamily="sans-serif"
+        android:text="@string/price"
+        android:textColor="@color/DarkGreen"
+        android:textSize="30dp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/cancelOrder"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/navigation"
+        android:layout_alignStart="@+id/itemNameTextView"
+        android:layout_marginBottom="12dp"
+        android:text="@string/cancel_order"
+        android:background="@color/DarkGreen"
+        android:textColor="@color/White"
+        />
+
+    <Button
+        android:id="@+id/makePayment"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/navigation"
+        android:layout_alignEnd="@+id/itemPriceTextView"
+        android:layout_marginBottom="12dp"
+        android:layout_marginEnd="19dp"
+        android:background="@color/DarkGreen"
+        android:text="@string/make_payment"
+        android:textColor="@color/White"
+        />
+
+    <TextView
+        android:id="@+id/totalPriceTV"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/cancelOrder"
+        android:layout_alignStart="@+id/cancelOrder"
+        android:layout_marginBottom="44dp"
+        android:text="@string/total_price"
+        android:textColor="@color/DarkGreen"
+        android:textSize="30dp" />
+
+    <TextView
+        android:id="@+id/totalPrice"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/totalPriceTV"
+        android:layout_alignBottom="@+id/totalPriceTV"
+        android:layout_alignStart="@+id/itemPriceTextView"
+        android:text="$10.00"
+        android:textColor="@color/DarkGreen"
+        android:textSize="30dp" />
+
+</RelativeLayout>
