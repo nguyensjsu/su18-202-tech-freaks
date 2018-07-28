@@ -20,7 +20,7 @@
 
 ## Details
 
-|Name | Detail|Id|
+|Name | Detail| |
 |---|---|---|
 | University | [SJSU UNIVERSITY]( http://www.sjsu.edu/) |
 | Course | [CMPE 202 - Project - Team Portion](https://sjsu.instructure.com/courses/1262771/assignments/4720318)|
