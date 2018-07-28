@@ -27,8 +27,8 @@
 |Professor| [Mr.Paul Nguyen](paul.nguyen@sjsu.edu) |
 | TEAM Name | Tech Freaks |
 |     [Harini Balakrishnan](https://www.linkedin.com/in/harini-balakrishnan/)  | 010830755  |  Add Card API
-|     [Supreetha Ganapathi](supreetha.ganapathi@sjsu.edu )    | 011332646| Manage Orders API
-|     [Ravali Nagabandi](ravali.nagabandi@sjsu.edu )     |011530454 | Payments API
+|     [Supreetha Ganapathi](supreetha.ganapathi@sjsu.edu )    | 011332646| Payments API
+|     [Ravali Nagabandi](ravali.nagabandi@sjsu.edu )     |011530454 | Manage Orders API
 |     [Rupal Martin](rupal.martin@sjsu.edu )     | 012169300 |User Authentication API
 
 ----
