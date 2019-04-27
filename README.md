@@ -67,6 +67,7 @@
 - Design the Android UI for My Part.
 
 ### Manage Orders API
+**By Ravali N**
 - Created Rest API for Manage Orders API.
 - Create necessary classes in the library
 - Created wireframe for Manage Orders API.
